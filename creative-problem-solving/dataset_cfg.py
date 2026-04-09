@@ -56,6 +56,41 @@ ground_truth = {
         "spatula": "knife",
         "toothpick": "safety pin",
         "pliers": "scissors"
+    },
+    "nominal-chain": {
+        "scoop": "spoon",
+        "hammer": "hammer",
+        "spatula": "spatula",
+        "toothpick": "toothpick",
+        "pliers": "pliers"
+    },
+    "creative-chain": {
+        "scoop": "bowl",
+        "hammer": "saucepan",
+        "spatula": "knife",
+        "toothpick": "safety pin",
+        "pliers": "scissors"
+    },
+    "creative-obj-chain": {
+        "scoop": "bowl",
+        "hammer": "saucepan",
+        "spatula": "knife",
+        "toothpick": "safety pin",
+        "pliers": "scissors"
+    },
+    "creative-task-chain": {
+        "scoop": "bowl",
+        "hammer": "saucepan",
+        "spatula": "knife",
+        "toothpick": "safety pin",
+        "pliers": "scissors"
+    },
+    "creative-task-obj-chain": {
+        "scoop": "bowl",
+        "hammer": "saucepan",
+        "spatula": "knife",
+        "toothpick": "safety pin",
+        "pliers": "scissors"
     }
 }
 
@@ -65,7 +100,7 @@ hf_model_name = {
     "CLIP-B-16": "openai/clip-vit-base-patch16",
     "CLIP-L-14": "openai/clip-vit-large-patch14",
     "CLIP-H-14": "laion/CLIP-ViT-H-14-laion2B-s32B-b79K",
-    "VILT-B-32": "dandelin/vilt-b32-finetuned-vqa"
+    #"VILT-B-32": "dandelin/vilt-b32-finetuned-vqa"
 }
 
 # Augmented prompts
@@ -92,3 +127,5 @@ augmented_prompts_task_obj = [
     "toothpicks can pick food caught between the teeth. toothpicks have a pointed tip. can this object be used as a toothpick?",
     "pliers can grab a coin. pliers have two-prongs. can this object be used as pliers?"
 ]
+
+chain_of_thought = "identify the core physical requirements of the missing tool, then evaluate each candidate object against these requirements"

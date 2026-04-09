@@ -5,7 +5,7 @@ from transformers import ViltProcessor, ViltForQuestionAnswering
 from PIL import Image
 import random
 from dataset_cfg import ground_truth, dataset_root, image_paths, hf_model_name
-from dataset_cfg import augmented_prompts_obj, augmented_prompts_task, augmented_prompts_task_obj
+from dataset_cfg import augmented_prompts_obj, augmented_prompts_task, augmented_prompts_task_obj, chain_of_thought
 from plotter import plot_results
 from tqdm import tqdm
 import numpy as np
@@ -98,10 +98,19 @@ def main(model_name, args):
                 "can this object be used as pliers?": create_random_three_objects(image_paths, "scissors", exclude="pliers")
             }
         }
+        
+        dataset_mapping["nominal-chain"] = {
+            (k + " " + chain_of_thought): v for k, v in dataset_mapping["nominal"].items()
+        }
+        dataset_mapping["creative-chain"] = {
+            (k + " " + chain_of_thought): v for k, v in dataset_mapping["creative"].items()
+        }
 
         text_list = {
             "nominal": [t for t in dataset_mapping["nominal"]],
-            "creative": [t for t in dataset_mapping["creative"]]
+            "creative": [t for t in dataset_mapping["creative"]],
+            "nominal-chain": [t for t in dataset_mapping["nominal-chain"]],
+            "creative-chain": [t for t in dataset_mapping["creative-chain"]]
         }
 
         # Create an augmented version of the creative task
@@ -122,6 +131,21 @@ def main(model_name, args):
                 k: v for k, v in zip(augmented_prompts_task_obj, dataset_mapping["creative"].values())
             }
             text_list["creative-task-obj"] = [t for t in dataset_mapping["creative-task-obj"]]
+        elif mode == "creative-obj-chain":
+            dataset_mapping["creative-obj-chain"] = {
+                (k + " " + chain_of_thought): v for k, v in zip(augmented_prompts_obj, dataset_mapping["creative"].values())
+            }
+            text_list["creative-obj-chain"] = [t for t in dataset_mapping["creative-obj-chain"]]
+        elif mode == "creative-task-chain":
+            dataset_mapping["creative-task-chain"] = {
+                (k + " " + chain_of_thought): v for k, v in zip(augmented_prompts_task, dataset_mapping["creative"].values())
+            }
+            text_list["creative-task-chain"] = [t for t in dataset_mapping["creative-task-chain"]]
+        elif mode == "creative-task-obj-chain":
+            dataset_mapping["creative-task-obj-chain"] = {
+                (k + " " + chain_of_thought): v for k, v in zip(augmented_prompts_task_obj, dataset_mapping["creative"].values())
+            }
+            text_list["creative-task-obj-chain"] = [t for t in dataset_mapping["creative-task-obj-chain"]]
 
         assert len(text_list["nominal"]) == N_tasks
 
@@ -174,8 +198,13 @@ if __name__ == "__main__":
         "nominal",
         "creative-obj",
         "creative-task",
-        "creative-task-obj"
-    ], "Allowed task types: creative/nominal/creative-obj/creative-task/creative-task-obj"
+        "creative-task-obj",
+        "creative-chain",
+        "nominal-chain",
+        "creative-obj-chain",
+        "creative-task-chain",
+        "creative-task-obj-chain",
+    ], "Allowed task types: creative/nominal/creative-obj/creative-task/creative-task-obj/creative-chain/nominal-chain/creative-obj-chain/creative-task-chain/creative-task-obj-chain"
 
     plotting_data = {}
     for name in hf_model_name.keys():

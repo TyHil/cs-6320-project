@@ -19,7 +19,12 @@ def plot_results(mode, data):
         "creative": "Oranges",
         "creative-obj": "Purples",
         "creative-task": "Greens",
-        "creative-task-obj": "Blues"
+        "creative-task-obj": "Blues",
+        "nominal-chain": "Reds",
+        "creative-chain": "Oranges",
+        "creative-obj-chain": "Purples",
+        "creative-task-chain": "Greens",
+        "creative-task-obj-chain": "Blues"
     }
     plt.imshow(grid_values, cmap=cmap[task_type], vmin=0, vmax=1)
 
@@ -54,6 +59,16 @@ def plot_results(mode, data):
         title = "Model performance with object and task augmented prompts"
     elif task_type == "nominal":
         title = "Model performance with regular prompts (no object replacement needed)"
+    elif task_type == "creative-chain":
+        title = "Model performance with regular prompts and chain of thought"
+    elif task_type == "creative-obj-chain":
+        title = "Model performance with object augmented prompts and chain of thought"
+    elif task_type == "creative-task-chain":
+        title = "Model performance with task augmented prompts and chain of thought"
+    elif task_type == "creative-task-obj-chain":
+        title = "Model performance with object and task augmented prompts and chain of thought"
+    elif task_type == "nominal-chain":
+        title = "Model performance with regular prompts (no object replacement needed) and chain of thought"
     plt.title(title)
 
     plt.tight_layout()
