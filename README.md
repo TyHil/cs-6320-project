@@ -4,6 +4,8 @@ Paper: [https://arxiv.org/abs/2405.01453](https://arxiv.org/abs/2405.01453) -- *
 This repository contains data and code for preliminary experiments demonstrating creative problem solving in LLMs, inspired by Computational Creativity literature. The code provided in this repository prompts LLMs (image + text prompts) to identify creative object replacements (object substitution) when the required objects are missing, e.g., substituting a bowl for a scoop. <ins>This work shows that prompts that are augmented with relevant object features (i.e., affordances) enable LLMs to effectively reason about object substitutions</ins>.
 
 ## Instructions for running the code
+Create a virtual invironment with `py -3.10 -m venv venv` or `python3.10 -m venv venv`.
+
 This repository requires [Pytorch](https://github.com/pytorch/pytorch) and HuggingFace [Transformers](https://github.com/huggingface/transformers) libraries. 
 ```
 pip install -r requirements.txt
