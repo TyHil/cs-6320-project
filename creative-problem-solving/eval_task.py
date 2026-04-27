@@ -1,5 +1,7 @@
 import torch
 import argparse
+import os
+import json
 from transformers import CLIPProcessor, CLIPModel
 from transformers import ViltProcessor, ViltForQuestionAnswering
 from PIL import Image
@@ -9,6 +11,15 @@ from dataset_cfg import augmented_prompts_obj, augmented_prompts_task, augmented
 from plotter import plot_results
 from tqdm import tqdm
 import numpy as np
+from openai import OpenAI
+from dotenv import load_dotenv
+
+load_dotenv(dotenv_path="../.env")
+
+
+# LLM client setup for CoT
+llm_client = OpenAI(api_key=os.environ.get("OPENAI_API_KEY"))
+LLM_MODEL = "gpt-3.5-turbo"  
 
 
 def get_model(model_name):
@@ -22,7 +33,65 @@ def get_model(model_name):
     return model, processor
 
 
-def run_vilt_eval(model, processor, text, images, names, device):
+def run_llm_cot(tool_name, affordance_description, candidate_scores):
+    """
+    Sends vision scores + affordance context to an LLM.
+    """
+    candidates_str = "\n".join(
+        f"- {name}: {score:.4f}" for name, score in sorted(
+            candidate_scores.items(), key=lambda x: x[1], reverse=True
+        )
+    )
+
+    prompt = f"""You are helping identify the best substitute object for a missing tool.
+
+Missing tool: {tool_name}
+Tool description: {affordance_description}
+
+A vision model has scored the following candidate objects based on how 
+visually similar they are to the tool description (higher = more similar):
+
+{candidates_str}
+
+Using chain-of-thought reasoning, please:
+1. Identify the core physical requirements of a {tool_name}
+2. Evaluate each candidate object against these requirements, considering both 
+   the vision model scores and your knowledge of the objects
+3. Select the single best substitute object
+
+Format your response as:
+REASONING: <your step-by-step analysis>
+SELECTION: <object name, exactly as listed above>"""
+
+    response = llm_client.chat.completions.create(
+        model=LLM_MODEL,
+        messages=[{"role": "user", "content": prompt}],
+        temperature=0.0, # deterministic for reproducibility
+        max_tokens=500
+    )
+
+    response_text = response.choices[0].message.content.strip()
+    # Parse the selection from the response
+    predicted_object = parse_llm_selection(response_text, candidate_scores)
+    return predicted_object, response_text
+
+
+def parse_llm_selection(response_text, candidate_scores):
+    """
+    Extracts the selected object name from the LLM response.
+    Falls back to highest vision score if parsing fails.
+    """
+    lines = response_text.strip().split("\n")
+    for line in lines:
+        if line.startswith("SELECTION:"):
+            selection = line.replace("SELECTION:", "").strip().lower()
+            for name in candidate_scores:
+                if name.lower() in selection or selection in name.lower():
+                    return name
+    return max(candidate_scores, key=candidate_scores.get)
+
+
+def run_vilt_eval(model, processor, text, images, names, device, return_scores=False):
     results = {}
     for i, img in enumerate(images):
         inputs = processor(img, text, return_tensors="pt")
@@ -35,6 +104,13 @@ def run_vilt_eval(model, processor, text, images, names, device):
         if "yes" in predicted_answer.lower():
             results[names[i]] = logits.max(-1).values.item()
 
+    if return_scores:
+        # Fill missing names with 0.0 if ViLT didn't predict "yes"
+        for name in names:
+            if name not in results:
+                results[name] = 0.0
+        return results
+
     # Pick the key from results that has highest value
     if not results:
         predicted_object = "None"
@@ -43,13 +119,22 @@ def run_vilt_eval(model, processor, text, images, names, device):
     return predicted_object
 
 
-def run_clip_eval(model, processor, text, images, names, device):
+def run_clip_eval(model, processor, text, images, names, device, return_scores=False):
     inputs = processor(text=text, images=images, return_tensors="pt", padding=True)
     inputs = {k: v.to(device) for k, v in inputs.items()}
     with torch.no_grad():
         outputs = model(**inputs)
     logits_per_image = outputs.logits_per_image  # this is the image-text similarity score
     probs = logits_per_image.softmax(dim=0)
+    
+    if return_scores:
+        scores_probs = probs.squeeze()
+        if scores_probs.dim() == 0:
+            scores_probs = [scores_probs.item()]
+        else:
+            scores_probs = scores_probs.tolist()
+        return {name: round(prob, 4) for name, prob in zip(names, scores_probs)}
+
     idx = probs.argmax(dim=0)
     return names[idx]
 
@@ -68,6 +153,15 @@ def main(model_name, args):
                 return 1 if ground_truth[obj] == predicted_object else 0
         return 0
 
+    # CoT Prompt descriptors mapped directly to the tools in ground_truth keys
+    tool_descriptions = {
+        "scoop": "concave and hollow, used to transfer materials",
+        "hammer": "heavy, handle attached to a cylinder at the end",
+        "spatula": "handle attached to a flat surface at the end",
+        "toothpick": "pointed tip, used to pick food between teeth",
+        "pliers": "two-pronged, used to grip objects"
+    }
+
     mode = args.task_type
     image_full_paths = {k: dataset_root + "/" + v for k, v in image_paths.items()}
     device = "cuda:0" if torch.cuda.is_available() else "cpu"
@@ -77,6 +171,7 @@ def main(model_name, args):
 
     accuracy = 0
     accuracy_by_class = {}
+    reasoning_log = [] # store CoT reasoning for analysis
     N_range = 10  # Number of samples per task
     N_tasks = 5  # Number of tasks
     N_samples = N_range * N_tasks  # Total number of samples
@@ -149,6 +244,8 @@ def main(model_name, args):
 
         assert len(text_list["nominal"]) == N_tasks
 
+        is_cot_mode = "chain" in mode
+
         for text in text_list[mode]:
             images = []
             names = []
@@ -158,20 +255,55 @@ def main(model_name, args):
                     names.append(name)
 
             if "vilt" in model_name:
-                predicted_object = run_vilt_eval(model, processor, text, images, names, device)
+                eval_output = run_vilt_eval(model, processor, text, images, names, device, return_scores=is_cot_mode)
             else:
-                predicted_object = run_clip_eval(model, processor, text, images, names, device)
-            if args.verbose:
-                print(f"Mode: {mode}, Text: {text}, Object: {predicted_object}, All objects: {names}")
+                eval_output = run_clip_eval(model, processor, text, images, names, device, return_scores=is_cot_mode)
+
+            if is_cot_mode:
+                # Dynamically extract tool name based on the ground_truth nominal keys
+                tool_name = next((tool for tool in ground_truth["nominal"].keys() if tool in text), "unknown tool")
+                affordance_desc = tool_descriptions.get(tool_name, text)
+                # Pass scores + context to LLM for CoT reasoning
+                candidate_scores = eval_output
+                predicted_object, reasoning = run_llm_cot(tool_name, affordance_desc, candidate_scores)
+                
+                if args.verbose:
+                    print(f"Mode: {mode}, Text: {text}")
+                    print(f"Vision Scores: {candidate_scores}")
+                    print(f"LLM Reasoning:\n{reasoning}")
+                    print(f"LLM Prediction: {predicted_object}\n")
+
+                if args.save_reasoning:
+                    # Log for later analysis
+                    reasoning_log.append({
+                        "text": text,
+                        "vision_scores": candidate_scores,
+                        "llm_selection": predicted_object,
+                        "llm_reasoning": reasoning,
+                        "correct": get_accuracy(text, predicted_object, ground_truth[mode])
+                    })
+            else:
+                predicted_object = eval_output
+                if args.verbose:
+                    print(f"Mode: {mode}, Text: {text}, Object: {predicted_object}, All objects: {names}")
+            
             accuracy += get_accuracy(text, predicted_object, ground_truth[mode])
             if text in accuracy_by_class:
                 accuracy_by_class[text] += get_accuracy(text, predicted_object, ground_truth[mode])
             else:
-                accuracy_by_class[text] = 1
+                accuracy_by_class[text] = 1 #TODO: check if we should use `get_accuracy(text, predicted_object, ground_truth[mode])`
 
     if args.verbose:
         for k, v in accuracy_by_class.items():
             print(f"Accuracy for {k}: {v * 100/N_range}%")
+
+    # Save reasoning log for qualitative analysis
+    if args.save_reasoning and is_cot_mode:
+        model_safe_name = model_name.split("/")[-1]
+        log_file = f"reasoning_log_{mode}_{model_safe_name}.json"
+        with open(log_file, "w") as f:
+            json.dump(reasoning_log, f, indent=2)
+        print(f"Reasoning log saved to {log_file}")
         
     # For visualization
     accuracy_by_class = {k: v / N_range for k, v in accuracy_by_class.items()}
@@ -191,6 +323,9 @@ if __name__ == "__main__":
     )
     parser.add_argument(
         "--verbose", action="store_true", help="Print results in console"
+    )
+    parser.add_argument(
+        "--save-reasoning", action="store_true", help="Save LLM CoT reasoning to a JSON file"
     )
     args = parser.parse_args()
     assert args.task_type in [
