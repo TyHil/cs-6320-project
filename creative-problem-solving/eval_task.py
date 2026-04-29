@@ -63,17 +63,36 @@ Return EXACTLY a JSON dictionary where the keys are the tool names and the value
         return default_tool_descriptions
 
 
-def run_llm_cot(tool_name, affordance_description, candidate_scores):
+def run_llm_cot(tool_name, affordance_description, candidate_scores, bypass_vision=False):
     """
     Sends vision scores + affordance context to an LLM.
     """
-    candidates_str = "\n".join(
-        f"- {name}: {score:.4f}" for name, score in sorted(
-            candidate_scores.items(), key=lambda x: x[1], reverse=True
-        )
-    )
+    if bypass_vision:
+        candidates_str = "\n".join(f"- {name}" for name in candidate_scores.keys())
+        prompt = f"""You are helping identify the best substitute object for a missing tool.
 
-    prompt = f"""You are helping identify the best substitute object for a missing tool.
+Missing tool: {tool_name}
+Tool description: {affordance_description}
+
+Here are the candidate objects available:
+{candidates_str}
+
+Using chain-of-thought reasoning, please:
+1. Identify the core physical requirements of a {tool_name}
+2. Evaluate each candidate object against these requirements using your general knowledge of what these objects physically look like and how they function.
+3. Select the single best substitute object
+
+Format your response as:
+REASONING: <your step-by-step analysis>
+SELECTION: <object name, exactly as listed above>"""
+    else:
+        candidates_str = "\n".join(
+            f"- {name}: {score:.4f}" for name, score in sorted(
+                candidate_scores.items(), key=lambda x: x[1], reverse=True
+            )
+        )
+
+        prompt = f"""You are helping identify the best substitute object for a missing tool.
 
 Missing tool: {tool_name}
 Tool description: {affordance_description}
@@ -186,9 +205,13 @@ def main(model_name, args, tool_descriptions):
     mode = args.task_type
     image_full_paths = {k: dataset_root + "/" + v for k, v in image_paths.items()}
     device = "cuda:0" if torch.cuda.is_available() else "cpu"
-    model, processor = get_model(model_name)
-    model.eval()
-    model.to(device)
+    
+    if not args.bypass_vision:
+        model, processor = get_model(model_name)
+        model.eval()
+        model.to(device)
+    else:
+        model, processor = None, None
 
     accuracy = 0
     accuracy_by_class = {}
@@ -240,10 +263,14 @@ def main(model_name, args, tool_descriptions):
                     images.append(Image.open(path))
                     names.append(name)
 
-            if "vilt" in model_name:
-                eval_output = run_vilt_eval(model, processor, text, images, names, device, return_scores=is_cot_mode)
+            if args.bypass_vision and is_cot_mode:
+                # dummy scores, it will ignore later
+                eval_output = {name: 0.0 for name in names}
             else:
-                eval_output = run_clip_eval(model, processor, text, images, names, device, return_scores=is_cot_mode)
+                if "vilt" in model_name:
+                    eval_output = run_vilt_eval(model, processor, text, images, names, device, return_scores=is_cot_mode)
+                else:
+                    eval_output = run_clip_eval(model, processor, text, images, names, device, return_scores=is_cot_mode)
 
             if is_cot_mode:
                 # Dynamically extract tool name based on the ground_truth nominal keys
@@ -251,11 +278,12 @@ def main(model_name, args, tool_descriptions):
                 affordance_desc = tool_descriptions.get(tool_name, text)
                 # Pass scores + context to LLM for CoT reasoning
                 candidate_scores = eval_output
-                predicted_object, reasoning = run_llm_cot(tool_name, affordance_desc, candidate_scores)
+                predicted_object, reasoning = run_llm_cot(tool_name, affordance_desc, candidate_scores, bypass_vision=args.bypass_vision)
                 
                 if args.verbose:
                     print(f"Mode: {mode}, Text: {text}")
-                    print(f"Vision Scores: {candidate_scores}")
+                    if not args.bypass_vision:
+                        print(f"Vision Scores: {candidate_scores}")
                     print(f"LLM Reasoning:\n{reasoning}")
                     print(f"LLM Prediction: {predicted_object}\n")
 
@@ -263,7 +291,7 @@ def main(model_name, args, tool_descriptions):
                     # Log for later analysis
                     reasoning_log.append({
                         "text": text,
-                        "vision_scores": candidate_scores,
+                        "vision_scores": candidate_scores if not args.bypass_vision else "BYPASSED",
                         "llm_selection": predicted_object,
                         "llm_reasoning": reasoning,
                         "correct": get_accuracy(text, predicted_object, ground_truth[mode])
@@ -316,6 +344,9 @@ if __name__ == "__main__":
     parser.add_argument(
         "--dynamic-descriptions", action="store_true", help="Dynamically generate tool descriptions via LLM"
     )
+    parser.add_argument(
+        "--bypass-vision", action="store_true", help="Bypass vision model scores and rely entirely on LLM CoT descriptions."
+    )
     args = parser.parse_args()
     assert args.task_type in [
         "creative",
@@ -330,6 +361,9 @@ if __name__ == "__main__":
         "creative-task-obj-chain",
     ], "Allowed task types: creative/nominal/creative-obj/creative-task/creative-task-obj/creative-chain/nominal-chain/creative-obj-chain/creative-task-chain/creative-task-obj-chain"
 
+    if args.bypass_vision and "chain" not in args.task_type:
+        parser.error("--bypass-vision can only be used with task types ending in '-chain' (CoT modes).")
+
     base_tools = list(ground_truth["nominal"].keys())
     
     # Tool Descriptions
@@ -342,10 +376,18 @@ if __name__ == "__main__":
         tool_descriptions = default_tool_descriptions
 
     plotting_data = {}
-    for name in hf_model_name.keys():
-        print(f"Model: {name}")
-        acc_by_class = main(hf_model_name[name], args, tool_descriptions)
-        plotting_data[name] = acc_by_class
+    
+    if args.bypass_vision:
+        print("Vision models bypassed. Running LLM CoT once and duplicating results for visualization...")
+        # Run once, then duplicate
+        acc_by_class = main("LLM_Only_Bypass", args, tool_descriptions)
+        for name in hf_model_name.keys():
+            plotting_data[name] = acc_by_class
+    else:
+        for name in hf_model_name.keys():
+            print(f"Model: {name}")
+            acc_by_class = main(hf_model_name[name], args, tool_descriptions)
+            plotting_data[name] = acc_by_class
 
     print("Saving visualization...")
-    plot_results(args.task_type, plotting_data)
+    plot_results(args.task_type, plotting_data, args.bypass_vision)
