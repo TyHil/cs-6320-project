@@ -7,7 +7,7 @@ from transformers import ViltProcessor, ViltForQuestionAnswering
 from PIL import Image
 import random
 from dataset_cfg import ground_truth, dataset_root, image_paths, hf_model_name
-from dataset_cfg import augmented_prompts_obj, augmented_prompts_task, augmented_prompts_task_obj, chain_of_thought
+from dataset_cfg import augmented_prompts_obj, augmented_prompts_task, augmented_prompts_task_obj
 from plotter import plot_results
 from tqdm import tqdm
 import numpy as np
@@ -174,7 +174,6 @@ def main(model_name, args):
     reasoning_log = [] # store CoT reasoning for analysis
     N_range = 10  # Number of samples per task
     N_tasks = 5  # Number of tasks
-    N_samples = N_range * N_tasks  # Total number of samples
 
     for _ in tqdm(range(N_range)):
         dataset_mapping = {
@@ -194,54 +193,20 @@ def main(model_name, args):
             }
         }
         
-        dataset_mapping["nominal-chain"] = {
-            (k + " " + chain_of_thought): v for k, v in dataset_mapping["nominal"].items()
-        }
-        dataset_mapping["creative-chain"] = {
-            (k + " " + chain_of_thought): v for k, v in dataset_mapping["creative"].items()
-        }
+        # Build augmented variations based on the "creative" objects
+        dataset_mapping["creative-obj"] = {k: v for k, v in zip(augmented_prompts_obj, dataset_mapping["creative"].values())}
+        dataset_mapping["creative-task"] = {k: v for k, v in zip(augmented_prompts_task, dataset_mapping["creative"].values())}
+        dataset_mapping["creative-task-obj"] = {k: v for k, v in zip(augmented_prompts_task_obj, dataset_mapping["creative"].values())}
 
-        text_list = {
-            "nominal": [t for t in dataset_mapping["nominal"]],
-            "creative": [t for t in dataset_mapping["creative"]],
-            "nominal-chain": [t for t in dataset_mapping["nominal-chain"]],
-            "creative-chain": [t for t in dataset_mapping["creative-chain"]]
-        }
+        # all the CoT ones should point to the baselines
+        dataset_mapping["nominal-chain"] = dataset_mapping["nominal"]
+        dataset_mapping["creative-chain"] = dataset_mapping["creative"]
+        dataset_mapping["creative-obj-chain"] = dataset_mapping["creative-obj"]
+        dataset_mapping["creative-task-chain"] = dataset_mapping["creative-task"]
+        dataset_mapping["creative-task-obj-chain"] = dataset_mapping["creative-task-obj"]
 
-        # Create an augmented version of the creative task
-        # We want to ensure that the same test objects are used for "creative" and other prompts
-        # Otherwise it will not be a fair comparison
-        if mode == "creative-obj":
-            dataset_mapping["creative-obj"] = {
-                k: v for k, v in zip(augmented_prompts_obj, dataset_mapping["creative"].values())
-            }
-            text_list["creative-obj"] = [t for t in dataset_mapping["creative-obj"]]
-        elif mode == "creative-task":
-            dataset_mapping["creative-task"] = {
-                k: v for k, v in zip(augmented_prompts_task, dataset_mapping["creative"].values())
-            }
-            text_list["creative-task"] = [t for t in dataset_mapping["creative-task"]]
-        elif mode == "creative-task-obj":
-            dataset_mapping["creative-task-obj"] = {
-                k: v for k, v in zip(augmented_prompts_task_obj, dataset_mapping["creative"].values())
-            }
-            text_list["creative-task-obj"] = [t for t in dataset_mapping["creative-task-obj"]]
-        elif mode == "creative-obj-chain":
-            dataset_mapping["creative-obj-chain"] = {
-                (k + " " + chain_of_thought): v for k, v in zip(augmented_prompts_obj, dataset_mapping["creative"].values())
-            }
-            text_list["creative-obj-chain"] = [t for t in dataset_mapping["creative-obj-chain"]]
-        elif mode == "creative-task-chain":
-            dataset_mapping["creative-task-chain"] = {
-                (k + " " + chain_of_thought): v for k, v in zip(augmented_prompts_task, dataset_mapping["creative"].values())
-            }
-            text_list["creative-task-chain"] = [t for t in dataset_mapping["creative-task-chain"]]
-        elif mode == "creative-task-obj-chain":
-            dataset_mapping["creative-task-obj-chain"] = {
-                (k + " " + chain_of_thought): v for k, v in zip(augmented_prompts_task_obj, dataset_mapping["creative"].values())
-            }
-            text_list["creative-task-obj-chain"] = [t for t in dataset_mapping["creative-task-obj-chain"]]
-
+        # dynamically build the text list for whatever mode selected
+        text_list = {m: list(dataset_mapping[m].keys()) for m in dataset_mapping.keys()}
         assert len(text_list["nominal"]) == N_tasks
 
         is_cot_mode = "chain" in mode
