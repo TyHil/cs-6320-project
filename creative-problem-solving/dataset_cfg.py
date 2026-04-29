@@ -127,3 +127,11 @@ augmented_prompts_task_obj = [
     "toothpicks can pick food caught between the teeth. toothpicks have a pointed tip. can this object be used as a toothpick?",
     "pliers can grab a coin. pliers have two-prongs. can this object be used as pliers?"
 ]
+
+default_tool_descriptions = {
+    "scoop": "concave and hollow, used to transfer materials",
+    "hammer": "heavy, handle attached to a cylinder at the end",
+    "spatula": "handle attached to a flat surface at the end",
+    "toothpick": "pointed tip, used to pick food between teeth",
+    "pliers": "two-pronged, used to grip objects"
+}

@@ -6,7 +6,7 @@ from transformers import CLIPProcessor, CLIPModel
 from transformers import ViltProcessor, ViltForQuestionAnswering
 from PIL import Image
 import random
-from dataset_cfg import ground_truth, dataset_root, image_paths, hf_model_name
+from dataset_cfg import ground_truth, dataset_root, image_paths, hf_model_name, default_tool_descriptions
 from dataset_cfg import augmented_prompts_obj, augmented_prompts_task, augmented_prompts_task_obj
 from plotter import plot_results
 from tqdm import tqdm
@@ -19,7 +19,8 @@ load_dotenv(dotenv_path="../.env")
 
 # LLM client setup for CoT
 llm_client = OpenAI(api_key=os.environ.get("OPENAI_API_KEY"))
-LLM_MODEL = "gpt-3.5-turbo"  
+LLM_MODEL = "gpt-3.5-turbo" 
+LLM_GEN_MODEL = "gpt-4o-mini"
 
 
 def get_model(model_name):
@@ -31,6 +32,35 @@ def get_model(model_name):
         model = CLIPModel.from_pretrained(model_name)
 
     return model, processor
+
+
+def generate_tool_descriptions(tools):
+    """
+    Dynamically generates physical affordance descriptions for a list of tools using an LLM
+    """
+    prompt = f"""You are an expert at describing the physical affordances of tools.
+Provide a short, concise physical description (focusing on shape, structure, and function) for each of the following tools: {', '.join(tools)}.
+
+Return EXACTLY a JSON dictionary where the keys are the tool names and the values are the descriptions. Do not include Markdown formatting or any other text."""
+    
+    try:
+        response = llm_client.chat.completions.create(
+            model=LLM_GEN_MODEL,
+            messages=[{"role": "user", "content": prompt}],
+            temperature=0.2, 
+        )
+        
+        response_text = response.choices[0].message.content.strip()
+        if response_text.startswith("```json"):
+            response_text = response_text.replace("```json", "").replace("```", "").strip()
+            
+        descriptions = json.loads(response_text)
+        return descriptions
+    except Exception as e:
+        print(f"Failed to dynamically generate descriptions. Error: {e}")
+        print("Falling back to default tool descriptions.")
+        # Fallback to defaults if parsing fails
+        return default_tool_descriptions
 
 
 def run_llm_cot(tool_name, affordance_description, candidate_scores):
@@ -139,7 +169,7 @@ def run_clip_eval(model, processor, text, images, names, device, return_scores=F
     return names[idx]
 
 
-def main(model_name, args):
+def main(model_name, args, tool_descriptions):
     # Seed for reproducibility
     random.seed(args.seed)
     def create_random_three_objects(image_paths, ground_truth, exclude=""):
@@ -152,15 +182,6 @@ def main(model_name, args):
             if obj in text:
                 return 1 if ground_truth[obj] == predicted_object else 0
         return 0
-
-    # CoT Prompt descriptors mapped directly to the tools in ground_truth keys
-    tool_descriptions = {
-        "scoop": "concave and hollow, used to transfer materials",
-        "hammer": "heavy, handle attached to a cylinder at the end",
-        "spatula": "handle attached to a flat surface at the end",
-        "toothpick": "pointed tip, used to pick food between teeth",
-        "pliers": "two-pronged, used to grip objects"
-    }
 
     mode = args.task_type
     image_full_paths = {k: dataset_root + "/" + v for k, v in image_paths.items()}
@@ -292,6 +313,9 @@ if __name__ == "__main__":
     parser.add_argument(
         "--save-reasoning", action="store_true", help="Save LLM CoT reasoning to a JSON file"
     )
+    parser.add_argument(
+        "--dynamic-descriptions", action="store_true", help="Dynamically generate tool descriptions via LLM"
+    )
     args = parser.parse_args()
     assert args.task_type in [
         "creative",
@@ -306,10 +330,21 @@ if __name__ == "__main__":
         "creative-task-obj-chain",
     ], "Allowed task types: creative/nominal/creative-obj/creative-task/creative-task-obj/creative-chain/nominal-chain/creative-obj-chain/creative-task-chain/creative-task-obj-chain"
 
+    base_tools = list(ground_truth["nominal"].keys())
+    
+    # Tool Descriptions
+    if args.dynamic_descriptions:
+        tool_descriptions = generate_tool_descriptions(base_tools)
+        if args.verbose:
+            print("Generated Descriptions:\n", json.dumps(tool_descriptions, indent=2))
+    else:
+        # Fallback to defaults
+        tool_descriptions = default_tool_descriptions
+
     plotting_data = {}
     for name in hf_model_name.keys():
         print(f"Model: {name}")
-        acc_by_class = main(hf_model_name[name], args)
+        acc_by_class = main(hf_model_name[name], args, tool_descriptions)
         plotting_data[name] = acc_by_class
 
     print("Saving visualization...")
