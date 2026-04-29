@@ -2,7 +2,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 
 
-def plot_results(mode, data, bypass_vision):
+def plot_results(mode, data, bypass_vision, dynamic_descriptions):
     tasks = ["Scoop", "Hammer", "Spatula", "Toothpick", "Pliers", "Overall"]
     data = {k: list(v.values()) for k, v in data.items()}
     task_type = mode
@@ -84,8 +84,11 @@ def plot_results(mode, data, bypass_vision):
             title = "Model performance with regular prompts (no object replacement needed) and ONLY chain of thought"
         else:
             title = "Model performance with regular prompts (no object replacement needed) and chain of thought"
-    plt.title(title)
+    
+    if dynamic_descriptions:
+        title += " & dynamic tool description"
+    plt.title(title, fontsize=7, wrap=True)
 
     plt.tight_layout()
     # Show the plot
-    plt.savefig(f'Viz_{task_type}{"_only_cot" if bypass_vision else ""}.png')
+    plt.savefig(f'Viz_{task_type}{"_only_cot" if bypass_vision else ""}{"_dynamic_descriptions" if dynamic_descriptions else ""}.png')

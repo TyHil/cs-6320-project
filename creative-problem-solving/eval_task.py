@@ -390,4 +390,4 @@ if __name__ == "__main__":
             plotting_data[name] = acc_by_class
 
     print("Saving visualization...")
-    plot_results(args.task_type, plotting_data, args.bypass_vision)
+    plot_results(args.task_type, plotting_data, args.bypass_vision, args.dynamic_descriptions)
