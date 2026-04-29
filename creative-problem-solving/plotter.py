@@ -2,7 +2,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 
 
-def plot_results(mode, data, bypass_vision, dynamic_descriptions):
+def plot_results(mode, data, bypass_vision, dynamic_descriptions, filename):
     tasks = ["Scoop", "Hammer", "Spatula", "Toothpick", "Pliers", "Overall"]
     data = {k: list(v.values()) for k, v in data.items()}
     task_type = mode
@@ -91,4 +91,4 @@ def plot_results(mode, data, bypass_vision, dynamic_descriptions):
 
     plt.tight_layout()
     # Show the plot
-    plt.savefig(f'Viz_{task_type}{"_only_cot" if bypass_vision else ""}{"_dynamic_descriptions" if dynamic_descriptions else ""}.png')
+    plt.savefig(filename)

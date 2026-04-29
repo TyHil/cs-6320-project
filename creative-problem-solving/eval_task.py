@@ -1,6 +1,7 @@
 import torch
 import argparse
 import os
+import sys
 import json
 from transformers import CLIPProcessor, CLIPModel
 from transformers import ViltProcessor, ViltForQuestionAnswering
@@ -347,6 +348,9 @@ if __name__ == "__main__":
     parser.add_argument(
         "--bypass-vision", action="store_true", help="Bypass vision model scores and rely entirely on LLM CoT descriptions."
     )
+    parser.add_argument(
+        "--override", action="store_true", help="Run the experiment even if the output plot already exists."
+    )
     args = parser.parse_args()
     assert args.task_type in [
         "creative",
@@ -363,6 +367,11 @@ if __name__ == "__main__":
 
     if args.bypass_vision and "chain" not in args.task_type:
         parser.error("--bypass-vision can only be used with task types ending in '-chain' (CoT modes).")
+
+    filename = f'Viz_{args.task_type}{"_only_cot" if args.bypass_vision else ""}{"_dynamic_descriptions" if args.dynamic_descriptions else ""}.png'
+    if os.path.exists(filename) and not args.override:
+        print(f"Skipping execution: '{filename}' already exists.")
+        sys.exit(0)
 
     base_tools = list(ground_truth["nominal"].keys())
     
@@ -390,4 +399,4 @@ if __name__ == "__main__":
             plotting_data[name] = acc_by_class
 
     print("Saving visualization...")
-    plot_results(args.task_type, plotting_data, args.bypass_vision, args.dynamic_descriptions)
+    plot_results(args.task_type, plotting_data, args.bypass_vision, args.dynamic_descriptions, filename)
