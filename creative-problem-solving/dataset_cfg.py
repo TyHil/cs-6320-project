@@ -100,7 +100,7 @@ hf_model_name = {
     "CLIP-B-16": "openai/clip-vit-base-patch16",
     "CLIP-L-14": "openai/clip-vit-large-patch14",
     "CLIP-H-14": "laion/CLIP-ViT-H-14-laion2B-s32B-b79K",
-    #"VILT-B-32": "dandelin/vilt-b32-finetuned-vqa"
+    "VILT-B-32": "dandelin/vilt-b32-finetuned-vqa"
 }
 
 # Augmented prompts
@@ -128,4 +128,10 @@ augmented_prompts_task_obj = [
     "pliers can grab a coin. pliers have two-prongs. can this object be used as pliers?"
 ]
 
-chain_of_thought = "identify the core physical requirements of the missing tool, then evaluate each candidate object against these requirements"
+default_tool_descriptions = {
+    "scoop": "concave and hollow, used to transfer materials",
+    "hammer": "heavy, handle attached to a cylinder at the end",
+    "spatula": "handle attached to a flat surface at the end",
+    "toothpick": "pointed tip, used to pick food between teeth",
+    "pliers": "two-pronged, used to grip objects"
+}

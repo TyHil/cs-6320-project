@@ -2,7 +2,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 
 
-def plot_results(mode, data):
+def plot_results(mode, data, bypass_vision, dynamic_descriptions, filename):
     tasks = ["Scoop", "Hammer", "Spatula", "Toothpick", "Pliers", "Overall"]
     data = {k: list(v.values()) for k, v in data.items()}
     task_type = mode
@@ -60,17 +60,35 @@ def plot_results(mode, data):
     elif task_type == "nominal":
         title = "Model performance with regular prompts (no object replacement needed)"
     elif task_type == "creative-chain":
-        title = "Model performance with regular prompts and chain of thought"
+        if bypass_vision:
+            title = "Model performance with regular prompts and ONLY chain of thought"
+        else:
+            title = "Model performance with regular prompts and chain of thought"
     elif task_type == "creative-obj-chain":
-        title = "Model performance with object augmented prompts and chain of thought"
+        if bypass_vision:
+            title = "Model performance with object augmented prompts and ONLY chain of thought"
+        else:
+            title = "Model performance with object augmented prompts and chain of thought"
     elif task_type == "creative-task-chain":
-        title = "Model performance with task augmented prompts and chain of thought"
+        if bypass_vision:
+            title = "Model performance with task augmented prompts and ONLY chain of thought"
+        else:
+            title = "Model performance with task augmented prompts and chain of thought"
     elif task_type == "creative-task-obj-chain":
-        title = "Model performance with object and task augmented prompts and chain of thought"
+        if bypass_vision:
+            title = "Model performance with object and task augmented prompts and ONLY chain of thought"
+        else:
+            title = "Model performance with object and task augmented prompts and chain of thought"
     elif task_type == "nominal-chain":
-        title = "Model performance with regular prompts (no object replacement needed) and chain of thought"
-    plt.title(title)
+        if bypass_vision:
+            title = "Model performance with regular prompts (no object replacement needed) and ONLY chain of thought"
+        else:
+            title = "Model performance with regular prompts (no object replacement needed) and chain of thought"
+    
+    if dynamic_descriptions:
+        title += " & dynamic tool description"
+    plt.title(title, fontsize=7, wrap=True)
 
     plt.tight_layout()
     # Show the plot
-    plt.savefig(f'Viz_{task_type}.png')
+    plt.savefig(filename)
