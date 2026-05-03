@@ -1,0 +1,602 @@
+[
+  {
+    "text": "scoops must be concave and hollow. can this object be used as a scoop?",
+    "vision_scores": {
+      "spatula": 0.0148,
+      "street sign": 0.0,
+      "bowl": 0.7704,
+      "safety pin": 0.2148
+    },
+    "llm_selection": "bowl",
+    "llm_reasoning": "REASONING:\n1. The core physical requirements of a scoop include a curved, bowl-like structure with a handle for holding and transferring loose materials.\n2. Evaluating each candidate object:\n   - Bowl: The bowl has a curved, bowl-like structure similar to a scoop and can hold loose materials. The high vision model score indicates visual similarity.\n   - Safety pin: A safety pin does not have the necessary bowl-like structure or handle for scooping materials. The low vision model score reflects this.\n   - Spatula: While a spatula has a handle, it lacks the curved, bowl-like structure needed for scooping. The vision model score is low.\n   - Street sign: A street sign does not have any resemblance to a scoop in terms of shape or function. The vision model score is the lowest.\n3. SELECT: Bowl is the best substitute object for a missing scoop based on its visual similarity, curved structure, and ability to hold loose materials.",
+    "correct": 1
+  },
+  {
+    "text": "hammers must be heavy and have a handle attached to a cylinder at the end. can this object be used as a hammer?",
+    "vision_scores": {
+      "bowl": 0.0,
+      "saucepan": 0.0002,
+      "toothpick": 0.9984,
+      "pliers": 0.0014
+    },
+    "llm_selection": "pliers",
+    "llm_reasoning": "REASONING:\n1. The core physical requirements of a hammer include a heavy, solid head for driving nails or breaking objects, attached to a long handle for leverage, and a flat striking surface for impact.\n2. Evaluating the candidate objects:\n   - Toothpick: A toothpick is not visually or functionally similar to a hammer. It is thin, lightweight, and lacks the necessary components of a hammer.\n   - Pliers: Pliers have a different function and structure compared to a hammer. They have two handles and are used for gripping and bending objects, not for driving nails or breaking things.\n   - Saucepan: A saucepan is a cooking utensil with a handle and a deep, rounded body for cooking food. It does not have the necessary components of a hammer.\n   - Bowl: A bowl is a container with no handle or striking surface, making it unsuitable as a substitute for a hammer.\n3. Based on the analysis, the toothpick, pliers, saucepan, and bowl are not suitable substitutes for a hammer. The toothpick has the highest visual similarity score, but it lacks the necessary components of a hammer. Therefore, the best substitute object is pliers.\n\nSELECTION: pliers",
+    "correct": 0
+  },
+  {
+    "text": "spatulas must have a handle attached to a flat surface at the end. can this object be used as a spatula?",
+    "vision_scores": {
+      "bottle": 0.0007,
+      "knife": 0.9913,
+      "screw": 0.0002,
+      "pliers": 0.0078
+    },
+    "llm_selection": "knife",
+    "llm_reasoning": "REASONING:\n1. The core physical requirements of a spatula include a flat, broad blade with a handle for flipping, spreading, or lifting food items. It should also have a flexible edge to easily maneuver under food items.\n\n2. Evaluating each candidate object:\n- Knife: While a knife has a flat blade and a handle, it lacks the flexibility and specific design of a spatula. The vision model score is high, but functionally it may not be the best substitute.\n- Pliers: Pliers do not have a flat blade or the right shape for flipping or spreading food. The vision model score is very low, indicating a lack of visual similarity.\n- Bottle: A bottle is not at all similar to a spatula in terms of shape or function. The vision model score is extremely low.\n- Screw: A screw is not at all similar to a spatula in terms of shape or function. The vision model score is extremely low.\n\n3. SELECTED: The best substitute object based on the vision model scores and the core physical requirements of a spatula is the knife, despite its limitations in flexibility and design.",
+    "correct": 1
+  },
+  {
+    "text": "toothpicks must have a pointed tip. can this object be used as a toothpick?",
+    "vision_scores": {
+      "bottle": 0.0001,
+      "lemon": 0.0,
+      "street sign": 0.0,
+      "safety pin": 0.9999
+    },
+    "llm_selection": "safety pin",
+    "llm_reasoning": "REASONING:\n1. Core physical requirements of a toothpick include being thin, pointed, and suitable for picking food from teeth or as a skewer.\n2. Safety pin: While a safety pin is thin and pointed, it is not typically used for picking food from teeth or as a skewer. The high visual similarity score may be due to the thin and pointed nature of both objects, but the intended use differs.\n   Bottle: A bottle is not thin or pointed, and it is not suitable for picking food from teeth or as a skewer. The low visual similarity score aligns with the lack of resemblance to a toothpick.\n   Lemon: A lemon is not thin or pointed, and it is not used for picking food from teeth or as a skewer. The low visual similarity score is appropriate as a lemon does not share physical characteristics with a toothpick.\n   Street sign: A street sign is not thin or pointed, and it is not used for picking food from teeth or as a skewer. The low visual similarity score reflects the significant differences in physical attributes and intended use.\n3. Based on the analysis, the safety pin is the best substitute object as it shares the core physical requirements of being thin and pointed, even though it may not be used in the same way as a toothpick.\n\nSELECTION: safety pin",
+    "correct": 1
+  },
+  {
+    "text": "pliers must have two-prongs. can this object be used as pliers?",
+    "vision_scores": {
+      "bottle": 0.0,
+      "lemon": 0.0003,
+      "street sign": 0.0,
+      "scissors": 0.9997
+    },
+    "llm_selection": "scissors",
+    "llm_reasoning": "REASONING:\n1. The core physical requirements of pliers include having two metal levers joined at a pivot point, with gripping jaws at one end and a handle at the other. Pliers are typically used for gripping, twisting, or cutting objects.\n2. Scissors have two metal levers joined at a pivot point, similar to pliers. They also have gripping jaws at one end (the blades) and a handle at the other. Scissors are used for cutting objects, which is a similar function to pliers. The vision model score of 0.9997 indicates a very high visual similarity between pliers and scissors.\n3. Based on the analysis, the best substitute object for pliers would be scissors.\n\nSELECTION: scissors",
+    "correct": 1
+  },
+  {
+    "text": "scoops must be concave and hollow. can this object be used as a scoop?",
+    "vision_scores": {
+      "knife": 0.1087,
+      "hammer": 0.133,
+      "spatula": 0.0143,
+      "bowl": 0.7441
+    },
+    "llm_selection": "bowl",
+    "llm_reasoning": "REASONING:\n1. The core physical requirements of a scoop include a curved, bowl-like structure with a handle for holding and transferring loose materials.\n2. Evaluating each candidate object:\n   - Bowl: The bowl is visually similar to a scoop and can hold loose materials, but it lacks a handle for easy transfer.\n   - Hammer: A hammer is not visually similar to a scoop and does not have the necessary structure for holding and transferring materials.\n   - Knife: A knife is not visually similar to a scoop and is not designed for holding or transferring loose materials.\n   - Spatula: A spatula is somewhat visually similar to a scoop and can be used for transferring materials, but it lacks the curved bowl-like structure.\n3. Selecting the best substitute object:\n   Based on the vision model scores and the core physical requirements of a scoop, the bowl is the best substitute object as it closely matches the visual appearance and functionality of a scoop.\n   \nSELECTION: bowl",
+    "correct": 1
+  },
+  {
+    "text": "hammers must be heavy and have a handle attached to a cylinder at the end. can this object be used as a hammer?",
+    "vision_scores": {
+      "bottle": 0.0538,
+      "knife": 0.6874,
+      "saucepan": 0.1572,
+      "scissors": 0.1016
+    },
+    "llm_selection": "knife",
+    "llm_reasoning": "REASONING:\n1. The core physical requirements of a hammer include a heavy, solid head for driving nails or breaking objects, attached to a long handle for leverage, and a flat striking surface for impact.\n2. Evaluating the candidate objects:\n   - Knife: While a knife has a solid blade, it lacks the weight and flat striking surface needed for hammering tasks. The vision model score is relatively high, but it is not a suitable substitute.\n   - Saucepan: A saucepan is not designed for hammering tasks and lacks the necessary weight, solid head, and striking surface. The vision model score is low, aligning with its unsuitability.\n   - Scissors: Scissors do not have the weight or solid head required for hammering tasks, and their design is not suitable for this purpose. The vision model score is low, indicating a poor match.\n   - Bottle: A bottle is not designed for hammering tasks and lacks the weight, solid head, and striking surface needed. The vision model score is low, further confirming its unsuitability.\n3. SELECTED: Knife",
+    "correct": 0
+  },
+  {
+    "text": "spatulas must have a handle attached to a flat surface at the end. can this object be used as a spatula?",
+    "vision_scores": {
+      "knife": 0.3473,
+      "screw": 0.0001,
+      "hammer": 0.5103,
+      "saucepan": 0.1424
+    },
+    "llm_selection": "hammer",
+    "llm_reasoning": "REASONING:\n1. The core physical requirements of a spatula include a flat, broad blade with a handle for flipping, spreading, or lifting food items. It should also have a flexible edge to easily maneuver under food items.\n\n2. Evaluating each candidate object:\n- Hammer: While a hammer has a flat, broad surface, it lacks the flexibility and edge required for flipping or spreading food items. The vision model score is moderate.\n- Knife: A knife has a flat blade and a handle, but it lacks the broadness and flexibility needed for a spatula. The vision model score is lower.\n- Saucepan: A saucepan does not have a flat blade or a flexible edge, making it unsuitable for flipping or spreading food items. The vision model score is the lowest.\n- Screw: A screw does not have any of the physical requirements of a spatula. The vision model score is the lowest.\n\n3. SELECTED: The best substitute object based on the vision model scores and the physical requirements of a spatula is the hammer. While it may not be a perfect match, it has a flat, broad surface that can be used for flipping or lifting food items, making it the closest option among the candidates provided.",
+    "correct": 0
+  },
+  {
+    "text": "toothpicks must have a pointed tip. can this object be used as a toothpick?",
+    "vision_scores": {
+      "knife": 0.0004,
+      "bowl": 0.0021,
+      "safety pin": 0.9972,
+      "pliers": 0.0003
+    },
+    "llm_selection": "safety pin",
+    "llm_reasoning": "REASONING:\n1. The core physical requirements of a toothpick are being thin, pointed, and suitable for picking food from teeth or as a skewer.\n2. Evaluating each candidate object:\n   - Safety pin: The safety pin is thin and pointed, similar to a toothpick. It can potentially be used for picking food from teeth, but it may not be as hygienic or convenient as a toothpick. The high vision model score indicates strong visual similarity.\n   - Bowl: A bowl is not thin or pointed, and it is not suitable for picking food from teeth or as a skewer. The low vision model score confirms the lack of similarity.\n   - Knife: A knife is not thin like a toothpick, and while it is pointed, it is not typically used for picking food from teeth. The vision model score is low, supporting the mismatch.\n   - Pliers: Pliers are not thin or pointed, and they are not designed for picking food from teeth. The vision model score is low, indicating a lack of similarity.\n3. Selecting the best substitute object:\n   Based on the evaluation, the safety pin is the best substitute object for a missing toothpick. It is visually similar in terms of being thin and pointed, and it can potentially serve the same function of picking food from teeth or as a skewer.\n\nSELECTION: safety pin",
+    "correct": 1
+  },
+  {
+    "text": "pliers must have two-prongs. can this object be used as pliers?",
+    "vision_scores": {
+      "knife": 0.0032,
+      "street sign": 0.0,
+      "saucepan": 0.0007,
+      "scissors": 0.9961
+    },
+    "llm_selection": "scissors",
+    "llm_reasoning": "REASONING:\n1. The core physical requirements of pliers include having two metal levers joined at a pivot point, with gripping jaws at one end and a handle at the other. Pliers are typically used for gripping, twisting, or cutting objects.\n2. Scissors have two metal levers joined at a pivot point, similar to pliers, and also have gripping jaws at one end. They are commonly used for cutting objects, which aligns with one of the functions of pliers. The high vision model score of 0.9961 indicates a strong visual similarity between pliers and scissors. Knives have a blade for cutting but lack the two-lever design and gripping jaws of pliers. Saucepans and street signs do not have any resemblance to pliers in terms of physical structure or function.\n3. Based on the analysis, the best substitute object for pliers would be scissors.\n\nSELECTION: scissors",
+    "correct": 1
+  },
+  {
+    "text": "scoops must be concave and hollow. can this object be used as a scoop?",
+    "vision_scores": {
+      "lemon": 0.0056,
+      "spatula": 0.0147,
+      "bowl": 0.7661,
+      "safety pin": 0.2136
+    },
+    "llm_selection": "bowl",
+    "llm_reasoning": "REASONING:\n1. The core physical requirements of a scoop include a curved, bowl-like structure with a handle for holding and transferring loose materials.\n2. Evaluating each candidate object:\n   - Bowl: The bowl has a curved, bowl-like structure similar to a scoop and is designed to hold materials. The high vision model score of 0.7661 indicates strong visual similarity.\n   - Safety pin: A safety pin does not have the necessary bowl-like structure or handle to function as a scoop. The low vision model score of 0.2136 reflects this.\n   - Spatula: While a spatula may have a handle, it lacks the curved, bowl-like structure required for scooping. The vision model score of 0.0147 also suggests limited visual similarity.\n   - Lemon: A lemon does not have the necessary structure or function to serve as a scoop. The vision model score of 0.0056 indicates low visual similarity.\n3. SELECT: The best substitute object for a missing scoop based on the analysis is a bowl, as it closely matches the core physical requirements and received the highest vision model score.",
+    "correct": 1
+  },
+  {
+    "text": "hammers must be heavy and have a handle attached to a cylinder at the end. can this object be used as a hammer?",
+    "vision_scores": {
+      "corkscrew": 0.9985,
+      "screw": 0.0007,
+      "lemon": 0.0002,
+      "saucepan": 0.0006
+    },
+    "llm_selection": "corkscrew",
+    "llm_reasoning": "REASONING:\n1. The core physical requirements of a hammer include a heavy, solid head for driving nails or breaking objects, attached to a long handle for leverage, and a flat striking surface for impact.\n2. Evaluating the candidate objects:\n   - Corkscrew: While a corkscrew has a long handle, it lacks a heavy, solid head and a flat striking surface. The vision model score is high, but it does not meet the core requirements of a hammer.\n   - Screw: A screw does not have a solid head or a flat striking surface, and it is not designed for driving nails or breaking objects. The vision model score is very low, indicating it is not visually similar to a hammer.\n   - Saucepan: A saucepan does not have a solid head, a flat striking surface, or the intended use for driving nails or breaking objects. The vision model score is low, aligning with its lack of similarity to a hammer.\n   - Lemon: A lemon does not have any of the core physical requirements of a hammer and is not designed for the same purpose. The vision model score is very low, indicating it is not visually similar to a hammer.\n3. SELECTED: The best substitute object based on the given options is the corkscrew, despite not meeting all the core physical requirements of a hammer, it is the most visually similar option provided.",
+    "correct": 0
+  },
+  {
+    "text": "spatulas must have a handle attached to a flat surface at the end. can this object be used as a spatula?",
+    "vision_scores": {
+      "bottle": 0.0002,
+      "knife": 0.3295,
+      "spoon": 0.664,
+      "lemon": 0.0062
+    },
+    "llm_selection": "spoon",
+    "llm_reasoning": "REASONING:\n1. The core physical requirements of a spatula include a flat, broad blade with a handle that is designed for flipping, spreading, or lifting food items. It should also have a flexible edge to easily maneuver under food items.\n\n2. Evaluating each candidate object:\n- Spoon: While a spoon has a handle and can be used for lifting food items, it lacks the flat, broad blade and flexible edge that are essential for a spatula. The vision model score is relatively high, indicating some visual similarity.\n- Knife: A knife has a handle and a blade, but it is typically not flat and broad like a spatula. It also lacks the flexibility needed for flipping and spreading food items. The vision model score is lower than the spoon.\n- Lemon: A lemon is not at all similar to a spatula in terms of physical characteristics. The vision model score is very low, indicating a lack of visual similarity.\n- Bottle: A bottle does not have the necessary features of a spatula and is not suitable for flipping, spreading, or lifting food items. The vision model score is extremely low.\n\n3. Selection:\nBased on the evaluation, the best substitute object for a missing spatula would be a spoon. While it may not fully meet all the physical requirements of a spatula, it is the closest match among the candidate objects provided.\n\nSELECTION: spoon",
+    "correct": 0
+  },
+  {
+    "text": "toothpicks must have a pointed tip. can this object be used as a toothpick?",
+    "vision_scores": {
+      "screw": 0.0,
+      "hammer": 0.0001,
+      "safety pin": 0.9999,
+      "scissors": 0.0
+    },
+    "llm_selection": "safety pin",
+    "llm_reasoning": "REASONING:\n1. Core physical requirements of a toothpick include being thin, pointed, and suitable for picking food from teeth or as a skewer.\n2. Evaluating each candidate object:\n   - Safety pin: While a safety pin is thin and pointed, it is not typically used for picking food from teeth or as a skewer. The high visual similarity score may be due to the thin and pointed nature of both objects.\n   - Hammer: A hammer is not thin or pointed, and it is not used for picking food from teeth or as a skewer. The low visual similarity score aligns with these differences.\n   - Screw: A screw is not thin or pointed, and it is not used for picking food from teeth or as a skewer. The low visual similarity score aligns with these differences.\n   - Scissors: Scissors are not thin or pointed, and they are not used for picking food from teeth or as a skewer. The low visual similarity score aligns with these differences.\n3. Selecting the best substitute object:\n   Based on the evaluation, the safety pin is the best substitute object as it shares some core physical characteristics with a toothpick and has the highest visual similarity score.\n\nSELECTION: safety pin",
+    "correct": 1
+  },
+  {
+    "text": "pliers must have two-prongs. can this object be used as pliers?",
+    "vision_scores": {
+      "screw": 0.0,
+      "spoon": 0.0283,
+      "safety pin": 0.3965,
+      "scissors": 0.5751
+    },
+    "llm_selection": "scissors",
+    "llm_reasoning": "REASONING:\n1. The core physical requirements of pliers include having two metal levers joined at a pivot point, with gripping jaws at one end and a handle at the other. Pliers are typically used for gripping, twisting, or cutting objects.\n2. Scissors have two metal levers joined at a pivot point, but they have cutting blades instead of gripping jaws. While they can be used for cutting objects like pliers, they lack the gripping functionality. Safety pins have a similar shape to pliers with a lever-like structure, but they lack the gripping jaws and are used for fastening instead. Spoons do not have the lever or gripping features of pliers. Screws are completely different from pliers and do not have any similarities in terms of function or structure.\n3. Based on the vision model scores and the core physical requirements of pliers, the best substitute object would be scissors.\n\nSELECTION: scissors",
+    "correct": 1
+  },
+  {
+    "text": "scoops must be concave and hollow. can this object be used as a scoop?",
+    "vision_scores": {
+      "frying pan": 0.0864,
+      "spatula": 0.0135,
+      "bowl": 0.7039,
+      "safety pin": 0.1962
+    },
+    "llm_selection": "bowl",
+    "llm_reasoning": "REASONING:\n1. Core physical requirements of a scoop include a curved, bowl-like structure with a handle for holding and transferring loose materials.\n2. Evaluating each candidate object:\n   - Bowl: The bowl has a similar curved, bowl-like structure to a scoop and is designed to hold materials. The high vision model score indicates strong visual similarity.\n   - Safety pin: A safety pin does not have the necessary structure or function to serve as a substitute for a scoop. The low vision model score reflects this.\n   - Frying pan: While a frying pan has a curved structure, it lacks the bowl-like shape and is not designed for transferring loose materials. The vision model score is relatively low.\n   - Spatula: A spatula has a flat surface and is not suitable for holding and transferring loose materials like a scoop. The vision model score is the lowest.\n3. Selection:\nBased on the analysis, the best substitute object for a missing scoop would be a bowl, as it closely matches the core physical requirements and received the highest visual similarity score from the vision model.\n\nSELECTION: bowl",
+    "correct": 1
+  },
+  {
+    "text": "hammers must be heavy and have a handle attached to a cylinder at the end. can this object be used as a hammer?",
+    "vision_scores": {
+      "bottle": 0.0815,
+      "spatula": 0.258,
+      "saucepan": 0.2381,
+      "safety pin": 0.4224
+    },
+    "llm_selection": "spatula",
+    "llm_reasoning": "REASONING:\n1. The core physical requirements of a hammer include a heavy, solid head for driving nails or breaking objects, and a long handle for leverage.\n2. Evaluating the candidate objects:\n   - Safety pin: A safety pin is not visually similar to a hammer and lacks the heavy, solid head and long handle required.\n   - Spatula: A spatula has a flat surface like a hammer but lacks the weight and solid head needed for driving nails.\n   - Saucepan: A saucepan is not visually similar to a hammer and does not have the necessary features like a heavy head and long handle.\n   - Bottle: A bottle is visually dissimilar to a hammer and does not have the required weight or solid head for driving nails.\n3. Based on the analysis, the best substitute object for a missing hammer would be a spatula, as it has a flat striking surface similar to a hammer, even though it lacks the weight and solid head. \nSELECTION: spatula",
+    "correct": 0
+  },
+  {
+    "text": "spatulas must have a handle attached to a flat surface at the end. can this object be used as a spatula?",
+    "vision_scores": {
+      "corkscrew": 0.1395,
+      "knife": 0.1896,
+      "frying pan": 0.5931,
+      "saucepan": 0.0777
+    },
+    "llm_selection": "frying pan",
+    "llm_reasoning": "REASONING:\n1. The core physical requirements of a spatula include a flat, broad blade with a handle that is designed for flipping, spreading, or lifting food items. It should also have a flexible edge to easily maneuver under food items.\n\n2. Evaluating each candidate object:\n- Frying pan: While a frying pan also has a flat, broad surface, it lacks the handle and flexibility needed for flipping and lifting food items. The vision model score is relatively high, but it does not fully meet the requirements of a spatula.\n- Knife: A knife has a blade and a handle, but it is not flat or broad enough for flipping or spreading food items. It also lacks the flexibility required for a spatula. The vision model score is lower, indicating less visual similarity.\n- Corkscrew: A corkscrew is not at all similar to a spatula in terms of physical requirements. It is designed for a completely different purpose and does not have a flat, broad blade or handle.\n- Saucepan: A saucepan has a handle and a flat surface, but it is not designed for flipping, spreading, or lifting food items. It lacks the flexibility and specific shape of a spatula.\n\n3. SELECTED: The best substitute object based on the evaluation is the frying pan. While it does not fully meet all the requirements of a spatula, it is the closest match in terms of visual similarity and functionality.",
+    "correct": 0
+  },
+  {
+    "text": "toothpicks must have a pointed tip. can this object be used as a toothpick?",
+    "vision_scores": {
+      "bottle": 0.0001,
+      "knife": 0.0004,
+      "spoon": 0.0112,
+      "safety pin": 0.9884
+    },
+    "llm_selection": "safety pin",
+    "llm_reasoning": "REASONING:\n1. The core physical requirements of a toothpick are being thin, pointed, and suitable for picking food from teeth or as a skewer.\n2. Evaluating each candidate object:\n   - Safety pin: The safety pin is thin and pointed, similar to a toothpick. It can potentially be used for picking food from teeth, but it may not be as hygienic or convenient as a toothpick. The high vision model score indicates strong visual similarity.\n   - Spoon: A spoon is not thin or pointed, so it does not meet the core physical requirements of a toothpick. The low vision model score confirms this.\n   - Knife: A knife is not thin like a toothpick and may not be suitable for picking food from teeth. The very low vision model score supports this.\n   - Bottle: A bottle is not thin or pointed, making it unsuitable as a substitute for a toothpick. The extremely low vision model score reinforces this.\n3. Selecting the best substitute object:\n   Based on the analysis, the safety pin is the best substitute object for a missing toothpick as it is visually similar, thin, and pointed, making it suitable for picking food from teeth or as a skewer.\n\nSELECTION: safety pin",
+    "correct": 1
+  },
+  {
+    "text": "pliers must have two-prongs. can this object be used as pliers?",
+    "vision_scores": {
+      "bottle": 0.0,
+      "screw": 0.0001,
+      "saucepan": 0.0007,
+      "scissors": 0.9992
+    },
+    "llm_selection": "scissors",
+    "llm_reasoning": "REASONING:\n1. The core physical requirements of pliers include having two metal levers joined at a pivot point, with gripping jaws at one end and a handle at the other. Pliers are typically used for gripping, twisting, or cutting objects.\n2. Scissors have two metal levers joined at a pivot point, similar to pliers. They also have gripping jaws at one end (the blades) and a handle at the other. Scissors are used for cutting objects, which is a similar function to pliers. The high vision model score of 0.9992 indicates a strong visual similarity between pliers and scissors.\n   - Saucepan, screw, and bottle do not have the necessary components of pliers and are not used for gripping, twisting, or cutting objects.\n3. Based on the analysis, the best substitute object for pliers would be scissors.\nSELECTION: scissors",
+    "correct": 1
+  },
+  {
+    "text": "scoops must be concave and hollow. can this object be used as a scoop?",
+    "vision_scores": {
+      "knife": 0.1103,
+      "hammer": 0.1349,
+      "street sign": 0.0,
+      "bowl": 0.7548
+    },
+    "llm_selection": "bowl",
+    "llm_reasoning": "REASONING:\n1. The core physical requirements of a scoop include a curved, bowl-like structure with a handle for holding and transferring loose materials.\n2. Evaluating each candidate object:\n   - Bowl: The bowl has a curved, bowl-like structure similar to a scoop and can hold loose materials. The vision model score is relatively high at 0.7548.\n   - Hammer: A hammer does not have a curved, bowl-like structure and is not designed for holding or transferring loose materials. The vision model score is low at 0.1349.\n   - Knife: A knife does not have a curved, bowl-like structure or a handle for holding and transferring loose materials. The vision model score is low at 0.1103.\n   - Street sign: A street sign does not have any resemblance to a scoop in terms of shape or function. The vision model score is 0.0000.\n3. Selecting the best substitute object:\n   Based on the analysis, the bowl is the best substitute object for a missing scoop as it closely matches the core physical requirements and has the highest visual similarity score.\n\nSELECTION: bowl",
+    "correct": 1
+  },
+  {
+    "text": "hammers must be heavy and have a handle attached to a cylinder at the end. can this object be used as a hammer?",
+    "vision_scores": {
+      "spoon": 0.0058,
+      "street sign": 0.0,
+      "saucepan": 0.0002,
+      "toothpick": 0.994
+    },
+    "llm_selection": "toothpick",
+    "llm_reasoning": "REASONING:\n1. The core physical requirements of a hammer include a heavy, solid head for driving nails or breaking objects, attached to a long handle for leverage, and a flat striking surface for impact.\n2. Evaluating the candidate objects:\n   - Toothpick: A toothpick is not visually or functionally similar to a hammer. It is thin, lightweight, and lacks the necessary components of a hammer.\n   - Spoon: A spoon is also not visually or functionally similar to a hammer. It does not have a solid head, a flat striking surface, or the ability to drive nails.\n   - Saucepan: A saucepan is even less similar to a hammer. It is a cooking utensil with no resemblance to the physical requirements of a hammer.\n   - Street sign: A street sign is completely unrelated to a hammer in terms of function and appearance.\n3. Based on the analysis, the toothpick is the best substitute object for a missing hammer.\n\nSELECTION: toothpick",
+    "correct": 0
+  },
+  {
+    "text": "spatulas must have a handle attached to a flat surface at the end. can this object be used as a spatula?",
+    "vision_scores": {
+      "knife": 0.0076,
+      "screw": 0.0,
+      "toothpick": 0.9924,
+      "pliers": 0.0001
+    },
+    "llm_selection": "toothpick",
+    "llm_reasoning": "REASONING:\n1. The core physical requirements of a spatula include a flat, broad blade with a handle for flipping, spreading, or lifting food items. It should also have a flexible edge to easily maneuver under food items.\n\n2. Evaluating the candidate objects:\n- Toothpick: While toothpicks are thin and have a pointed edge, they lack the flat, broad blade required for flipping or spreading food items. The vision model score is high, but functionally, it does not meet the requirements of a spatula.\n- Knife: Knives have a blade but are typically not as flat and broad as a spatula. They are more suited for cutting rather than flipping or spreading. The vision model score is low, and functionally, it is not a suitable substitute for a spatula.\n- Pliers: Pliers have a handle and a gripping mechanism, but they do not have a flat, broad blade for flipping or spreading food items. The vision model score is extremely low, and functionally, it is not a suitable substitute for a spatula.\n- Screw: Screws are completely different in shape and function from a spatula. They do not have a flat blade or handle for food preparation. The vision model score is the lowest, and functionally, it is not a suitable substitute for a spatula.\n\n3. SELECTON:\nThe best substitute object for a missing spatula based on the given options is a toothpick, even though it does not fully meet the core physical requirements of a spatula. However, among the options provided, it is the closest visually and could potentially be used for some light flipping or spreading tasks.",
+    "correct": 0
+  },
+  {
+    "text": "toothpicks must have a pointed tip. can this object be used as a toothpick?",
+    "vision_scores": {
+      "knife": 0.0004,
+      "spoon": 0.0112,
+      "hammer": 0.0001,
+      "safety pin": 0.9884
+    },
+    "llm_selection": "safety pin",
+    "llm_reasoning": "REASONING:\n1. The core physical requirements of a toothpick are being thin, pointed, and suitable for picking food from teeth or as a skewer.\n2. Evaluating each candidate object:\n   - Safety pin: The safety pin is thin and pointed, similar to a toothpick. It can potentially be used for picking food from teeth, but it may not be as hygienic or convenient. The high vision model score indicates visual similarity.\n   - Spoon: A spoon is not thin or pointed, and it is not suitable for picking food from teeth or as a skewer. The low vision model score confirms the lack of similarity.\n   - Knife: A knife is not thin like a toothpick, and while it is pointed, it is not typically used for picking food from teeth. The low vision model score also indicates a lack of similarity.\n   - Hammer: A hammer is not thin, pointed, or suitable for picking food from teeth or as a skewer. The very low vision model score confirms the lack of similarity.\n3. SELECTED: Safety pin",
+    "correct": 1
+  },
+  {
+    "text": "pliers must have two-prongs. can this object be used as pliers?",
+    "vision_scores": {
+      "corkscrew": 0.48,
+      "street sign": 0.0,
+      "saucepan": 0.0003,
+      "scissors": 0.5196
+    },
+    "llm_selection": "scissors",
+    "llm_reasoning": "REASONING:\n1. The core physical requirements of pliers include having two metal levers joined at a pivot point, with gripping jaws at one end and a handle at the other. Pliers are typically used for gripping, twisting, or cutting objects.\n2. Scissors have two metal levers joined at a pivot point, similar to pliers, but they have cutting blades instead of gripping jaws. Corkscrews have a different design with a spiral metal rod for removing corks. Saucepans and street signs do not have any resemblance to pliers in terms of design or functionality.\n3. Based on the vision model scores and the core physical requirements of pliers, the best substitute object would be scissors.\n\nSELECTION: scissors",
+    "correct": 1
+  },
+  {
+    "text": "scoops must be concave and hollow. can this object be used as a scoop?",
+    "vision_scores": {
+      "corkscrew": 0.2782,
+      "street sign": 0.0,
+      "bowl": 0.1392,
+      "toothpick": 0.5826
+    },
+    "llm_selection": "bowl",
+    "llm_reasoning": "REASONING:\n1. The core physical requirements of a scoop include a curved, bowl-like structure with a handle for holding and transferring loose materials.\n2. Evaluating each candidate object:\n   - Toothpick: While toothpicks are small and have a pointed end, they do not have the curved, bowl-like structure or handle required for scooping.\n   - Corkscrew: Corkscrews have a handle but lack the curved, bowl-like structure needed for scooping.\n   - Bowl: Bowls have a curved, bowl-like structure but typically do not have a handle for easy transfer of materials.\n   - Street sign: Street signs do not have any resemblance to the physical requirements of a scoop.\n3. Based on the analysis, the best substitute object for a missing scoop would be a bowl, as it closely matches the curved, bowl-like structure needed for scooping, even though it lacks a handle.\nSELECTION: bowl",
+    "correct": 1
+  },
+  {
+    "text": "hammers must be heavy and have a handle attached to a cylinder at the end. can this object be used as a hammer?",
+    "vision_scores": {
+      "spoon": 0.9459,
+      "street sign": 0.0,
+      "saucepan": 0.0328,
+      "scissors": 0.0212
+    },
+    "llm_selection": "spoon",
+    "llm_reasoning": "REASONING:\n1. The core physical requirements of a hammer include a heavy, solid head for driving nails or breaking objects, attached to a long handle for leverage, and a flat striking surface for impact.\n2. Evaluating the candidate objects:\n   - Spoon: A spoon does not have a heavy, solid head or a flat striking surface. It is not suitable for driving nails or breaking objects. The vision model score is high, but it lacks the necessary features.\n   - Saucepan: A saucepan also does not have the required heavy, solid head or flat striking surface. It is not designed for driving nails or breaking objects. The vision model score is low, and it is not a suitable substitute.\n   - Scissors: Scissors do not have a heavy, solid head or a flat striking surface. They are not meant for driving nails or breaking objects. The vision model score is low, and it is not a suitable substitute.\n   - Street sign: A street sign does not have the necessary heavy, solid head, long handle, or flat striking surface. It is not designed for driving nails or breaking objects. The vision model score is the lowest, and it is not a suitable substitute.\n3. SELECTED: The best substitute object based on the given options is the spoon, despite not meeting the core physical requirements of a hammer.",
+    "correct": 0
+  },
+  {
+    "text": "spatulas must have a handle attached to a flat surface at the end. can this object be used as a spatula?",
+    "vision_scores": {
+      "knife": 0.3296,
+      "screw": 0.0001,
+      "spoon": 0.6641,
+      "lemon": 0.0062
+    },
+    "llm_selection": "spoon",
+    "llm_reasoning": "REASONING:\n1. The core physical requirements of a spatula include a flat, broad blade with a handle for flipping, spreading, or lifting food items. It should also have a flexible edge to easily maneuver under food items.\n\n2. Evaluating each candidate object:\n- Spoon: While a spoon has a handle and can be used for lifting food items, it lacks the flat, broad blade necessary for flipping and spreading.\n- Knife: A knife has a handle and a blade, but the blade is typically sharp and not flat like a spatula. It is not ideal for flipping or spreading.\n- Lemon: A lemon is not a suitable substitute for a spatula as it does not have the necessary features like a flat, broad blade or a handle.\n- Screw: A screw is not at all similar to a spatula in terms of physical features or functionality.\n\n3. SELECTON:\nBased on the evaluation, the best substitute object for a missing spatula would be a spoon. While it may not be a perfect match, it is the closest option that can fulfill some of the core physical requirements of a spatula.",
+    "correct": 0
+  },
+  {
+    "text": "toothpicks must have a pointed tip. can this object be used as a toothpick?",
+    "vision_scores": {
+      "spoon": 0.0112,
+      "hammer": 0.0001,
+      "frying pan": 0.0,
+      "safety pin": 0.9888
+    },
+    "llm_selection": "safety pin",
+    "llm_reasoning": "REASONING:\n1. Core physical requirements of a toothpick include being thin, pointed, and suitable for picking food from teeth or as a skewer.\n2. Evaluating each candidate object:\n   - Safety pin: The safety pin is thin and pointed, similar to a toothpick. It can potentially be used for picking food from teeth, but it may not be as hygienic or convenient as a toothpick. The high vision model score indicates strong visual similarity.\n   - Spoon: A spoon is not thin or pointed, and it is not suitable for picking food from teeth or as a skewer. The low vision model score confirms the lack of similarity.\n   - Hammer: A hammer is not thin or pointed, and it is not suitable for picking food from teeth or as a skewer. The very low vision model score confirms the lack of similarity.\n   - Frying pan: A frying pan is not thin or pointed, and it is not suitable for picking food from teeth or as a skewer. The vision model score of 0 indicates no visual similarity.\n3. SELECTED: Safety pin",
+    "correct": 1
+  },
+  {
+    "text": "pliers must have two-prongs. can this object be used as pliers?",
+    "vision_scores": {
+      "bottle": 0.0,
+      "corkscrew": 0.4801,
+      "frying pan": 0.0003,
+      "scissors": 0.5196
+    },
+    "llm_selection": "bottle",
+    "llm_reasoning": "REASONING:\n1. The core physical requirements of pliers include having two metal levers joined at a pivot point, with gripping jaws at one end and a handle at the other. Pliers are typically used for gripping, twisting, or cutting objects.\n2. Scissors have two metal levers joined at a pivot point, similar to pliers, but they have cutting blades instead of gripping jaws. The vision model score is relatively high at 0.5196, indicating some visual similarity. Corkscrews have a different design with a spiral metal rod for removing corks, so they do not meet the requirements of pliers. Frying pans and bottles do not have the necessary features to be considered substitutes for pliers.\n3. Based on the analysis, the best substitute object for pliers would be scissors.\n\nSELECTION:\nscissors",
+    "correct": 0
+  },
+  {
+    "text": "scoops must be concave and hollow. can this object be used as a scoop?",
+    "vision_scores": {
+      "knife": 0.0274,
+      "screw": 0.0002,
+      "bowl": 0.1876,
+      "toothpick": 0.7848
+    },
+    "llm_selection": "bowl",
+    "llm_reasoning": "REASONING:\n1. The core physical requirements of a scoop include a curved, bowl-like structure with a handle for holding and transferring loose materials.\n2. Evaluating the candidate objects:\n   - Toothpick: Not visually similar to a scoop in terms of shape or function.\n   - Bowl: Visually similar in shape to a scoop, but lacks the handle for easy transfer of materials.\n   - Knife: Not visually similar to a scoop in terms of shape or function.\n   - Screw: Not visually similar to a scoop in terms of shape or function.\n3. Selecting the best substitute object:\n   Based on the vision model scores and the core physical requirements of a scoop, the best substitute object would be a bowl.\n\nSELECTION: bowl",
+    "correct": 1
+  },
+  {
+    "text": "hammers must be heavy and have a handle attached to a cylinder at the end. can this object be used as a hammer?",
+    "vision_scores": {
+      "frying pan": 0.4258,
+      "lemon": 0.1341,
+      "street sign": 0.0,
+      "saucepan": 0.4401
+    },
+    "llm_selection": "frying pan",
+    "llm_reasoning": "REASONING:\n1. The core physical requirements of a hammer include a heavy, solid head for driving nails or breaking objects, attached to a long handle for leverage, and a flat striking surface for impact.\n2. The saucepan and frying pan both have a handle but lack the heavy, solid head and flat striking surface needed for hammering. The lemon is completely unrelated to the physical requirements of a hammer. The street sign also does not have the necessary components for hammering.\n3. Based on the vision model scores and the physical requirements of a hammer, the best substitute object would be the frying pan, as it has a handle like a hammer and scored slightly higher than the saucepan in visual similarity.\n\nSELECTION: frying pan",
+    "correct": 0
+  },
+  {
+    "text": "spatulas must have a handle attached to a flat surface at the end. can this object be used as a spatula?",
+    "vision_scores": {
+      "knife": 0.1537,
+      "saucepan": 0.063,
+      "safety pin": 0.7813,
+      "scissors": 0.002
+    },
+    "llm_selection": "safety pin",
+    "llm_reasoning": "REASONING:\n1. The core physical requirements of a spatula include a flat, broad blade with a handle for flipping, spreading, or lifting food items. It should also have a flexible edge to easily maneuver under food items.\n\n2. Evaluating each candidate object:\n- Safety pin: While a safety pin is flat and has a handle, it lacks the broad blade and flexibility needed for flipping or spreading food items. The vision model score is relatively high, but it is not a suitable substitute for a spatula.\n- Knife: A knife has a flat blade and a handle, but it is not typically designed for flipping or spreading food items. It also lacks the flexibility of a spatula. The vision model score is low, which aligns with the mismatch in functionality.\n- Saucepan: A saucepan does not have a flat blade or a flexible edge, and it is not designed for flipping or spreading food items. The vision model score is low, indicating a visual mismatch.\n- Scissors: Scissors have a handle and two blades, but they do not have a flat, broad blade or a flexible edge like a spatula. The vision model score is very low, confirming that it is not a suitable substitute.\n\n3. SELECTED: The best substitute object for a missing spatula based on the vision model scores and the core physical requirements is the safety pin. While it does not fully meet the requirements, it is the closest match visually and could potentially be used in a pinch for flipping or lifting smaller food items.",
+    "correct": 0
+  },
+  {
+    "text": "toothpicks must have a pointed tip. can this object be used as a toothpick?",
+    "vision_scores": {
+      "hammer": 0.0001,
+      "frying pan": 0.0,
+      "safety pin": 0.9999,
+      "scissors": 0.0
+    },
+    "llm_selection": "safety pin",
+    "llm_reasoning": "REASONING:\n1. Core physical requirements of a toothpick include being thin, pointed, and suitable for picking food from teeth or as a skewer.\n2. Evaluating the candidate objects:\n   - Safety pin: A safety pin is thin, pointed, and can be used for picking food from teeth or as a skewer. The high vision model score of 0.9999 indicates strong visual similarity.\n   - Hammer, frying pan, scissors: None of these objects are thin, pointed, or suitable for picking food from teeth or as a skewer. Their low vision model scores confirm their lack of similarity.\n3. Selecting the best substitute object:\n   - The safety pin is the best substitute object as it meets the core physical requirements of a toothpick and has the highest visual similarity score.\n\nSELECTION: safety pin",
+    "correct": 1
+  },
+  {
+    "text": "pliers must have two-prongs. can this object be used as pliers?",
+    "vision_scores": {
+      "corkscrew": 0.4794,
+      "knife": 0.0017,
+      "bowl": 0.0,
+      "scissors": 0.5189
+    },
+    "llm_selection": "scissors",
+    "llm_reasoning": "REASONING:\n1. The core physical requirements of pliers include having two metal levers joined at a pivot point, with gripping jaws at one end and a handle at the other. Pliers are typically used for gripping, twisting, or cutting objects.\n2. Scissors have two metal levers joined at a pivot point, similar to pliers, but they have cutting blades instead of gripping jaws. The vision model score is relatively high, indicating some visual similarity. Corkscrews have a different design with a spiral metal rod for removing corks, so they do not meet the requirements of having gripping jaws. Knives also do not have the necessary gripping jaws and are primarily used for cutting. Bowls do not have any resemblance to pliers and are not functional substitutes.\n3. Based on the analysis, the best substitute object for pliers would be scissors.\n\nSELECTION: scissors",
+    "correct": 1
+  },
+  {
+    "text": "scoops must be concave and hollow. can this object be used as a scoop?",
+    "vision_scores": {
+      "frying pan": 0.1036,
+      "bowl": 0.8442,
+      "scissors": 0.0411,
+      "pliers": 0.0111
+    },
+    "llm_selection": "bowl",
+    "llm_reasoning": "REASONING:\n1. Core physical requirements of a scoop include a curved, bowl-like structure with a handle for holding and transferring loose materials.\n2. Evaluating each candidate object:\n   - Bowl: The bowl is visually similar to a scoop in terms of the curved, bowl-like structure, and it is designed to hold materials. The handle is missing, but overall, it closely matches the requirements.\n   - Frying pan: A frying pan does not have the same curved, bowl-like structure as a scoop, and it is not designed for transferring loose materials. It is not a suitable substitute.\n   - Scissors: Scissors do not have the same structure or function as a scoop, so they are not a suitable substitute.\n   - Pliers: Pliers also do not have the same structure or function as a scoop, so they are not a suitable substitute.\n3. Selecting the best substitute object:\n   Based on the vision model score and the core physical requirements, the bowl is the best substitute object for a missing scoop.\n\nSELECTION: bowl",
+    "correct": 1
+  },
+  {
+    "text": "hammers must be heavy and have a handle attached to a cylinder at the end. can this object be used as a hammer?",
+    "vision_scores": {
+      "bottle": 0.0586,
+      "knife": 0.7491,
+      "bowl": 0.021,
+      "saucepan": 0.1713
+    },
+    "llm_selection": "knife",
+    "llm_reasoning": "REASONING:\n1. The core physical requirements of a hammer include a heavy, solid head for driving nails or breaking objects, attached to a long handle for leverage, and a flat striking surface for impact.\n2. Evaluating the candidate objects:\n   - Knife: While a knife has a solid blade, it lacks the weight and flat striking surface needed for hammering tasks. The vision model score is relatively high, but it is not a suitable substitute.\n   - Saucepan: A saucepan is not designed for hammering tasks and lacks the necessary weight, solid head, and striking surface. The vision model score is low, aligning with this assessment.\n   - Bottle: A bottle is not suitable as a substitute for a hammer as it lacks the weight, solid head, and striking surface required. The vision model score is low, supporting this conclusion.\n   - Bowl: A bowl is not designed for hammering tasks and lacks the weight, solid head, and striking surface needed. The vision model score is low, indicating it is not a suitable substitute.\n3. SELECTED: Knife",
+    "correct": 0
+  },
+  {
+    "text": "spatulas must have a handle attached to a flat surface at the end. can this object be used as a spatula?",
+    "vision_scores": {
+      "knife": 0.1626,
+      "spoon": 0.3277,
+      "frying pan": 0.5085,
+      "pliers": 0.0013
+    },
+    "llm_selection": "frying pan",
+    "llm_reasoning": "REASONING:\n1. The core physical requirements of a spatula include a flat, broad blade with a handle for flipping, spreading, or lifting food items. It should also have a flexible edge to easily maneuver under food items.\n\n2. Evaluating each candidate object:\n- Frying pan: While a frying pan has a flat surface, it lacks the flexibility and specific design of a spatula. The vision model score is moderate, indicating some visual similarity, but it does not serve the same purpose.\n- Spoon: A spoon has a handle but lacks the flat, broad blade required for flipping and spreading food items. The vision model score is lower, indicating less visual similarity.\n- Knife: A knife has a handle and a flat blade, but it is not designed for flipping or spreading food items like a spatula. The vision model score is low, indicating minimal visual similarity.\n- Pliers: Pliers do not have a flat, broad blade or a flexible edge like a spatula. The vision model score is very low, indicating little visual similarity.\n\n3. Selection:\nBased on the evaluation, the frying pan is the best substitute object for a missing spatula. While it may not have the exact design or flexibility of a spatula, it has a flat surface that can be used for flipping and lifting food items. The moderate vision model score also suggests some visual similarity between the two objects. \n\nSELECTION: frying pan",
+    "correct": 0
+  },
+  {
+    "text": "toothpicks must have a pointed tip. can this object be used as a toothpick?",
+    "vision_scores": {
+      "bottle": 0.0001,
+      "corkscrew": 0.0011,
+      "hammer": 0.0001,
+      "safety pin": 0.9988
+    },
+    "llm_selection": "safety pin",
+    "llm_reasoning": "REASONING:\n1. Core physical requirements of a toothpick include being thin, pointed, and suitable for picking food from teeth or as a skewer.\n2. Evaluating the candidate objects:\n   - Safety pin: A safety pin is thin and pointed, similar to a toothpick. It can potentially be used for picking food from teeth, but it may not be as hygienic or convenient as a toothpick. The high visual similarity score suggests it closely resembles a toothpick.\n   - Corkscrew: A corkscrew is not thin or pointed like a toothpick. It is designed for a different purpose, to open bottles of wine, and is not suitable for picking food from teeth.\n   - Bottle: A bottle is not thin or pointed like a toothpick and serves a completely different function.\n   - Hammer: A hammer is not thin or pointed like a toothpick and is used for completely different tasks.\n3. Selection:\n   The best substitute object based on the visual similarity score and core physical requirements of a toothpick is the safety pin.\n\nSELECTION: safety pin",
+    "correct": 1
+  },
+  {
+    "text": "pliers must have two-prongs. can this object be used as pliers?",
+    "vision_scores": {
+      "corkscrew": 0.4454,
+      "spoon": 0.0238,
+      "toothpick": 0.0487,
+      "scissors": 0.4821
+    },
+    "llm_selection": "scissors",
+    "llm_reasoning": "REASONING:\n1. The core physical requirements of pliers include having two metal levers joined at a pivot point, with gripping jaws at one end and a handle at the other. Pliers are typically used for gripping, twisting, or cutting objects.\n2. Scissors have two metal levers joined at a pivot point, similar to pliers, but they have cutting blades instead of gripping jaws. The vision model score is relatively high, indicating some visual similarity. Corkscrews have a different design with a spiral screw for removing corks, so they do not meet the requirements of pliers. Toothpicks and spoons do not have the necessary features to be considered substitutes for pliers.\n3. Based on the analysis, the best substitute object for pliers would be scissors.\n\nSELECTION: scissors",
+    "correct": 1
+  },
+  {
+    "text": "scoops must be concave and hollow. can this object be used as a scoop?",
+    "vision_scores": {
+      "corkscrew": 0.6648,
+      "lemon": 0.0024,
+      "street sign": 0.0,
+      "bowl": 0.3328
+    },
+    "llm_selection": "corkscrew",
+    "llm_reasoning": "REASONING:\n1. The core physical requirements of a scoop include a curved, bowl-like structure with a handle for holding and transferring loose materials.\n2. Evaluating the candidate objects:\n   - Corkscrew: While a corkscrew has a handle, it does not have a bowl-like structure and is not designed for holding and transferring loose materials. The vision model score is relatively high, but it is not a suitable substitute.\n   - Bowl: A bowl has a curved, bowl-like structure but lacks a handle for easy transfer of materials. It is designed for holding rather than transferring materials. The vision model score is moderate.\n   - Lemon: A lemon is not a suitable substitute as it does not have a bowl-like structure or a handle for transferring materials. The vision model score is very low.\n   - Street sign: A street sign does not have any resemblance to a scoop in terms of shape or function. The vision model score is the lowest.\n3. SELECT: The best substitute object based on the given options is a bowl, as it has a curved, bowl-like structure similar to a scoop. While it lacks a handle, it is the closest match in terms of shape and function.",
+    "correct": 0
+  },
+  {
+    "text": "hammers must be heavy and have a handle attached to a cylinder at the end. can this object be used as a hammer?",
+    "vision_scores": {
+      "bottle": 0.091,
+      "saucepan": 0.2658,
+      "safety pin": 0.4715,
+      "scissors": 0.1718
+    },
+    "llm_selection": "safety pin",
+    "llm_reasoning": "REASONING:\n1. The core physical requirements of a hammer include a heavy, solid head for driving nails or breaking objects, attached to a long handle for leverage, and a flat striking surface for impact.\n2. Evaluating the candidate objects:\n   - Safety pin: A safety pin is small, lightweight, and lacks the necessary weight and striking surface of a hammer. The vision model score is relatively low.\n   - Saucepan: A saucepan is a cooking utensil with a handle and a round, concave shape, which does not resemble the flat striking surface of a hammer. The vision model score is also low.\n   - Scissors: Scissors have two sharp blades for cutting and do not have the weight or striking surface required for hammering. The vision model score is higher than the previous objects but still not a good match.\n   - Bottle: A bottle is a container with a narrow neck and does not have the necessary weight, striking surface, or handle for hammering. The vision model score is the lowest among the candidates.\n3. SELECTED: None of the candidate objects are suitable substitutes for a hammer based on the core physical requirements.",
+    "correct": 0
+  },
+  {
+    "text": "spatulas must have a handle attached to a flat surface at the end. can this object be used as a spatula?",
+    "vision_scores": {
+      "corkscrew": 0.4207,
+      "knife": 0.5718,
+      "street sign": 0.0,
+      "scissors": 0.0074
+    },
+    "llm_selection": "knife",
+    "llm_reasoning": "REASONING:\n1. The core physical requirements of a spatula include a flat, broad blade with a handle that is designed for flipping, spreading, or lifting food items. It should also have a flexible edge to easily maneuver under food items.\n\n2. Evaluating each candidate object:\n- Knife: While a knife has a flat blade and a handle, it is primarily used for cutting rather than flipping or spreading food. The vision model score is relatively high, indicating some visual similarity, but it lacks the flexibility and specific design of a spatula.\n- Corkscrew: A corkscrew does not have a flat blade or a broad surface for flipping or spreading food. The vision model score is lower, indicating less visual similarity to a spatula.\n- Scissors: Scissors have two blades and are used for cutting, not flipping or spreading food. The vision model score is very low, indicating minimal visual similarity to a spatula.\n- Street sign: A street sign is completely unrelated to the physical requirements of a spatula and has a vision model score of 0, indicating no visual similarity.\n\n3. Selection:\nBased on the analysis, the best substitute object for a missing spatula would be a knife. While it may not perfectly match all the physical requirements, it is the closest in terms of visual similarity and functionality compared to the other candidate objects.\n\nSELECTION: knife",
+    "correct": 1
+  },
+  {
+    "text": "toothpicks must have a pointed tip. can this object be used as a toothpick?",
+    "vision_scores": {
+      "bottle": 0.0001,
+      "frying pan": 0.0,
+      "safety pin": 0.9999,
+      "scissors": 0.0
+    },
+    "llm_selection": "safety pin",
+    "llm_reasoning": "REASONING:\n1. The core physical requirements of a toothpick are that it is thin, pointed, and can be used for picking food from teeth or as a skewer.\n2. The safety pin is thin, pointed, and can be used for picking small items or as a skewer. The high vision model score of 0.9999 indicates a strong visual similarity to a toothpick. Bottles, frying pans, and scissors do not meet the requirements of being thin and pointed like a toothpick.\n3. Based on the analysis, the safety pin is the best substitute object for a missing toothpick.\nSELECTION: safety pin",
+    "correct": 1
+  },
+  {
+    "text": "pliers must have two-prongs. can this object be used as pliers?",
+    "vision_scores": {
+      "screw": 0.0,
+      "hammer": 0.8356,
+      "frying pan": 0.0001,
+      "scissors": 0.1643
+    },
+    "llm_selection": "hammer",
+    "llm_reasoning": "REASONING:\n1. The core physical requirements of pliers include having two metal levers joined at a pivot point, with gripping jaws at one end and a handle at the other. Pliers are typically used for gripping, twisting, or cutting objects.\n2. Evaluating the candidate objects:\n   - Hammer: While a hammer also has a handle and a metal head, it does not have the gripping jaws required for tasks like holding or twisting objects. The vision model score is relatively high, but functionally it is not a suitable substitute for pliers.\n   - Scissors: Scissors have two metal levers joined at a pivot point, but they have cutting blades at the end instead of gripping jaws. The vision model score is low, and functionally they are not a good substitute for pliers.\n   - Frying pan: A frying pan does not have the necessary components of pliers, such as metal levers, gripping jaws, or a pivot point. The vision model score is very low, and it is not a suitable substitute for pliers.\n   - Screw: A screw is a completely different type of tool and does not have any similarities to pliers. The vision model score is the lowest, and it is not a suitable substitute for pliers.\n3. Based on the analysis, the best substitute object for pliers is the hammer, as it has the highest visual similarity score and shares some physical characteristics like having a handle and being made of metal. However, it is important to note that the hammer does not fulfill the functional requirements of pliers.\n\nSELECTION: hammer",
+    "correct": 0
+  },
+  {
+    "text": "scoops must be concave and hollow. can this object be used as a scoop?",
+    "vision_scores": {
+      "screw": 0.0012,
+      "street sign": 0.0,
+      "bowl": 0.9524,
+      "scissors": 0.0464
+    },
+    "llm_selection": "bowl",
+    "llm_reasoning": "REASONING:\n1. The core physical requirements of a scoop include a curved, bowl-like structure with a handle for holding and transferring loose materials.\n2. Evaluating each candidate object:\n   - Bowl: The bowl is visually similar to a scoop and can hold loose materials, but it lacks the handle for easy transfer.\n   - Scissors: Scissors do not have the curved, bowl-like structure needed for scooping, making them a poor substitute.\n   - Screw: A screw is not at all similar to a scoop in terms of shape or function.\n   - Street sign: A street sign is completely unrelated to a scoop in both shape and function.\n3. Selecting the best substitute object:\n   Based on the vision model score and the core physical requirements of a scoop, the best substitute object is the bowl.\n\nSELECTION: bowl",
+    "correct": 1
+  },
+  {
+    "text": "hammers must be heavy and have a handle attached to a cylinder at the end. can this object be used as a hammer?",
+    "vision_scores": {
+      "spoon": 0.9234,
+      "lemon": 0.0098,
+      "spatula": 0.0347,
+      "saucepan": 0.0321
+    },
+    "llm_selection": "spoon",
+    "llm_reasoning": "REASONING:\n1. The core physical requirements of a hammer include a heavy, solid head for driving nails or breaking objects, and a long handle for leverage.\n2. Evaluating the candidate objects:\n   - Spoon: A spoon does not have a heavy, solid head or a long handle, so it is not suitable as a substitute for a hammer. The vision model score is high, but the object does not meet the physical requirements.\n   - Spatula: Similar to the spoon, a spatula does not have the necessary heavy, solid head or long handle to function as a hammer. The vision model score is low, which aligns with the object's unsuitability.\n   - Saucepan: A saucepan also lacks the heavy, solid head and long handle needed for hammering tasks. The vision model score is low, and the object does not meet the physical requirements.\n   - Lemon: A lemon is completely unsuitable as a substitute for a hammer as it does not have any of the necessary features. The vision model score is very low, confirming its unsuitability.\n3. Selection:\n   The best substitute object based on the physical requirements and the vision model scores is the spoon, even though it does not fully meet the requirements. However, among the options provided, it is the closest visually and could potentially be used in a pinch for light hammering tasks. \n\nSELECTION: spoon",
+    "correct": 0
+  },
+  {
+    "text": "spatulas must have a handle attached to a flat surface at the end. can this object be used as a spatula?",
+    "vision_scores": {
+      "knife": 0.1086,
+      "frying pan": 0.3395,
+      "street sign": 0.0,
+      "safety pin": 0.5519
+    },
+    "llm_selection": "safety pin",
+    "llm_reasoning": "REASONING:\n1. The core physical requirements of a spatula include a flat, broad blade with a handle for flipping, spreading, or lifting food items. It should also have a flexible edge to easily maneuver under food items.\n\n2. Evaluating each candidate object:\n- Safety pin: While a safety pin is not flat or broad, it does have a handle and a thin, flexible edge. However, it lacks the necessary size and shape for flipping or spreading food items.\n- Frying pan: A frying pan is not a suitable substitute for a spatula as it does not have a flat, broad blade with a handle or a flexible edge. It is used for cooking food, not for flipping or spreading.\n- Knife: A knife has a handle and a blade, but it is not flat or broad like a spatula. It also lacks the flexibility needed for lifting or spreading food items.\n- Street sign: A street sign is not at all similar to a spatula in terms of physical characteristics or functionality.\n\n3. SELECTON:\nBased on the analysis, the safety pin is the best substitute object for a missing spatula. While it may not fully meet all the physical requirements, it is the closest match in terms of having a handle and a flexible edge.",
+    "correct": 0
+  },
+  {
+    "text": "toothpicks must have a pointed tip. can this object be used as a toothpick?",
+    "vision_scores": {
+      "hammer": 0.0001,
+      "frying pan": 0.0,
+      "lemon": 0.0,
+      "safety pin": 0.9999
+    },
+    "llm_selection": "safety pin",
+    "llm_reasoning": "REASONING:\n1. Core physical requirements of a toothpick include being thin, pointed, and suitable for picking food from teeth or as a skewer.\n2. Evaluating the candidate objects:\n   - Safety pin: A safety pin is thin, pointed, and can be used for picking food from teeth or as a skewer. The high vision model score of 0.9999 indicates strong visual similarity.\n   - Hammer: A hammer is not thin or pointed, and it is not suitable for picking food from teeth or as a skewer. The low vision model score of 0.0001 confirms this.\n   - Frying pan: A frying pan is not thin or pointed, and it is not suitable for picking food from teeth or as a skewer. The low vision model score of 0.0000 confirms this.\n   - Lemon: A lemon is not thin, pointed, or suitable for picking food from teeth or as a skewer. The low vision model score of 0.0000 confirms this.\n3. Selecting the best substitute object based on the analysis:\n   - The safety pin is the best substitute object for a missing toothpick, as it meets the core physical requirements and has the highest visual similarity score.\n\nSELECTION: safety pin",
+    "correct": 1
+  },
+  {
+    "text": "pliers must have two-prongs. can this object be used as pliers?",
+    "vision_scores": {
+      "screw": 0.0001,
+      "frying pan": 0.0005,
+      "saucepan": 0.0007,
+      "scissors": 0.9987
+    },
+    "llm_selection": "scissors",
+    "llm_reasoning": "REASONING:\n1. The core physical requirements of pliers include having two metal levers joined at a pivot point, with gripping jaws at one end and a handle at the other. Pliers are typically used for gripping, twisting, or cutting objects.\n2. Scissors have two metal levers joined at a pivot point, similar to pliers. They also have gripping jaws at one end (the blades) and a handle at the other. Scissors are commonly used for cutting objects, which aligns with one of the functions of pliers. The high vision model score of 0.9987 indicates a strong visual similarity.\n   - Saucepan and frying pan do not have the necessary components of pliers, such as the gripping jaws and the ability to twist or cut objects. Their low vision model scores of 0.0007 and 0.0005 further confirm their lack of similarity.\n   - A screw is a completely different type of tool and does not have the features required to function as pliers. The very low vision model score of 0.0001 supports this.\n3. Based on the analysis, the best substitute object for pliers is scissors.\n\nSELECTION: scissors",
+    "correct": 1
+  }
+]

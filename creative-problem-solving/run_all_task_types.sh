@@ -20,12 +20,13 @@ echo "=========================================="
 # Loop through the array for each task type
 for TASK in "${TASK_TYPES[@]}"; do
     
-    DYN_FLAGS=("" "--dynamic-descriptions")
     
     if [[ "$TASK" == *-chain* ]]; then
         VISION_FLAGS=("" "--bypass-vision")
+        DYN_FLAGS=("" "--dynamic-descriptions")
     else
         VISION_FLAGS=("")
+        DYN_FLAGS=("")
     fi
 
     # Loop through combinations

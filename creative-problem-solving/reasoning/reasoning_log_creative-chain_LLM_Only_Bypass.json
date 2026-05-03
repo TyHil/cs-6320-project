@@ -1,0 +1,352 @@
+[
+  {
+    "text": "can this object be used as a scoop?",
+    "vision_scores": "BYPASSED",
+    "llm_selection": "spatula",
+    "llm_reasoning": "REASONING:\n1. The core physical requirements of a scoop include a curved, bowl-like structure with a handle for holding and transferring loose materials.\n2. Evaluating each candidate object:\n- Spatula: While a spatula has a flat, sometimes slightly curved surface, it lacks the bowl-like structure needed for scooping.\n- Street sign: A street sign is flat and not designed for holding or transferring loose materials.\n- Bowl: A bowl has a curved, bowl-like structure but lacks a handle for easy transfer of materials.\n- Safety pin: A safety pin is not designed for holding or transferring loose materials and does not have the necessary structure for scooping.\n3. SELECTON: The best substitute object for a missing scoop would be a bowl. While it lacks a handle, it has the closest physical resemblance to a scoop with its curved, bowl-like structure, making it the most suitable option for holding and transferring loose materials.",
+    "correct": 0
+  },
+  {
+    "text": "can this object be used as a hammer?",
+    "vision_scores": "BYPASSED",
+    "llm_selection": "bowl",
+    "llm_reasoning": "REASONING:\n1. The core physical requirements of a hammer include a heavy, solid head for driving nails or breaking objects, and a long, straight handle for leverage and control.\n2. Evaluating the candidate objects:\n- Bowl: Does not have a solid head or a handle suitable for driving nails or breaking objects.\n- Saucepan: Does not have a solid head or a handle suitable for driving nails or breaking objects.\n- Toothpick: Does not have a solid head or a handle suitable for driving nails or breaking objects.\n- Pliers: While pliers have a solid head, they do not have a long, straight handle for leverage and control like a hammer.\n3. SELECTON: None of the candidate objects are suitable substitutes for a hammer.",
+    "correct": 0
+  },
+  {
+    "text": "can this object be used as a spatula?",
+    "vision_scores": "BYPASSED",
+    "llm_selection": "bottle",
+    "llm_reasoning": "REASONING:\n1. The core physical requirements of a spatula include a flat, broad blade for flipping, spreading, or lifting food items.\n2. Evaluating the candidate objects:\n- Bottle: Does not have a flat, broad blade for flipping or spreading food items.\n- Knife: While it has a flat blade, it is typically sharp and not ideal for flipping or spreading food items.\n- Screw: Not at all suitable for flipping, spreading, or lifting food items.\n- Pliers: Although they have a flat surface, they are not designed for food handling and may not be hygienic.\n3. SELECTED: Knife. While not a perfect substitute, a knife's flat blade can be used for flipping or spreading food items in the absence of a spatula.",
+    "correct": 0
+  },
+  {
+    "text": "can this object be used as a toothpick?",
+    "vision_scores": "BYPASSED",
+    "llm_selection": "bottle",
+    "llm_reasoning": "REASONING:\n1. The core physical requirements of a toothpick are that it is thin, pointed, and sturdy enough to remove food particles from between teeth without breaking.\n2. Evaluating each candidate object:\n- Bottle: Bottles are not thin or pointed, and they are not suitable for removing food particles from between teeth.\n- Lemon: Lemons are not thin or pointed, and they are not suitable for removing food particles from between teeth.\n- Street sign: Street signs are not thin or pointed, and they are not suitable for removing food particles from between teeth.\n- Safety pin: Safety pins are thin, pointed, and sturdy, making them a potential substitute for a toothpick.\n3. SELECTED: Safety pin",
+    "correct": 0
+  },
+  {
+    "text": "can this object be used as pliers?",
+    "vision_scores": "BYPASSED",
+    "llm_selection": "bottle",
+    "llm_reasoning": "REASONING:\n1. The core physical requirements of pliers include two metal arms joined at a pivot point, with gripping jaws at one end and a lever mechanism for applying force.\n2. Evaluating the candidate objects:\n- Bottle: Does not have the necessary metal arms, gripping jaws, or lever mechanism.\n- Lemon: Does not have the necessary metal arms, gripping jaws, or lever mechanism.\n- Street sign: Does not have the necessary gripping jaws or lever mechanism, although it may have metal arms.\n- Scissors: Has two metal arms joined at a pivot point, with one end having gripping jaws (the blades) and a lever mechanism for applying force.\n3. SELECT: Scissors would be the best substitute object for pliers as they share the core physical requirements and functionality needed for tasks that would typically require pliers.",
+    "correct": 0
+  },
+  {
+    "text": "can this object be used as a scoop?",
+    "vision_scores": "BYPASSED",
+    "llm_selection": "knife",
+    "llm_reasoning": "REASONING:\n1. The core physical requirements of a scoop include a curved, bowl-like structure with a handle for holding and transferring loose materials.\n2. Evaluating each candidate object:\n- Knife: Does not have a curved, bowl-like structure or a handle suitable for scooping.\n- Hammer: Not designed for holding or transferring loose materials.\n- Spatula: Has a flat, sometimes curved, surface but lacks the bowl-like structure of a scoop.\n- Bowl: While it has a curved, bowl-like structure, it lacks a handle for easy transfer of materials.\n3. SELECTON: The best substitute object for a missing scoop would be a spatula. While it may not have the exact bowl-like structure, it is the closest in terms of functionality for holding and transferring loose materials.",
+    "correct": 0
+  },
+  {
+    "text": "can this object be used as a hammer?",
+    "vision_scores": "BYPASSED",
+    "llm_selection": "bottle",
+    "llm_reasoning": "REASONING:\n1. The core physical requirements of a hammer include a heavy, solid head for driving nails or breaking objects, and a long, straight handle for leverage and control.\n2. Evaluating the candidate objects:\n- Bottle: Does not have a heavy, solid head or a long, straight handle.\n- Knife: Does not have a heavy, solid head or a long, straight handle.\n- Saucepan: Does not have a long, straight handle and is not designed for driving nails or breaking objects.\n- Scissors: Does not have a heavy, solid head or a long, straight handle.\n3. Selection: None of the candidate objects are suitable substitutes for a hammer.",
+    "correct": 0
+  },
+  {
+    "text": "can this object be used as a spatula?",
+    "vision_scores": "BYPASSED",
+    "llm_selection": "knife",
+    "llm_reasoning": "REASONING:\n1. The core physical requirements of a spatula include a flat, broad blade for flipping, spreading, or lifting food items.\n2. Evaluating each candidate object:\n- Knife: While a knife has a flat blade, it is typically sharp and not ideal for flipping or spreading food items.\n- Screw: A screw is not flat or broad, and it does not have a handle for easy manipulation.\n- Hammer: A hammer is not flat or broad, and it is not designed for food-related tasks.\n- Saucepan: A saucepan does not have a flat blade or a handle for flipping or spreading food items.\n3. Selection: The knife is the best substitute object for a spatula, as it has a flat blade that can be used for flipping or spreading food items, even though it may not be as ideal as a spatula.",
+    "correct": 1
+  },
+  {
+    "text": "can this object be used as a toothpick?",
+    "vision_scores": "BYPASSED",
+    "llm_selection": "knife",
+    "llm_reasoning": "REASONING:\n1. The core physical requirements of a toothpick are that it is thin, pointed, and able to fit between teeth to remove food particles.\n2. Evaluating each candidate object:\n- Knife: While a knife is thin and pointed, it is not designed for the delicate task of removing food particles between teeth and could potentially cause harm.\n- Bowl: A bowl is not thin or pointed, making it unsuitable for the task of removing food particles between teeth.\n- Safety pin: A safety pin is thin and pointed, similar to a toothpick, but it may not be hygienic for oral use and could potentially cause injury.\n- Pliers: Pliers are not thin or pointed, making them unsuitable for the task of removing food particles between teeth.\n3. SELECTED: Safety pin is the best substitute object as it is thin and pointed, similar to a toothpick, and could potentially serve the purpose in a pinch. However, caution should be exercised to ensure it is clean and safe for oral use.",
+    "correct": 0
+  },
+  {
+    "text": "can this object be used as pliers?",
+    "vision_scores": "BYPASSED",
+    "llm_selection": "knife",
+    "llm_reasoning": "REASONING:\n1. The core physical requirements of pliers include two metal arms joined at a pivot point, with gripping jaws at one end and a lever mechanism for applying force.\n2. Evaluating the candidate objects:\n- Knife: Does not have the two arms or lever mechanism required for pliers.\n- Street sign: Not a suitable substitute as it does not have the necessary features of pliers.\n- Saucepan: Lacks the gripping jaws and lever mechanism needed for pliers.\n- Scissors: Has two metal arms joined at a pivot point, but lacks the gripping jaws and lever mechanism.\n3. SELECTON: Scissors would be the best substitute object as it shares the closest resemblance to pliers with its two metal arms joined at a pivot point. While it lacks the gripping jaws and lever mechanism, it is the most similar option available.",
+    "correct": 0
+  },
+  {
+    "text": "can this object be used as a scoop?",
+    "vision_scores": "BYPASSED",
+    "llm_selection": "lemon",
+    "llm_reasoning": "REASONING:\n1. The core physical requirements of a scoop include a curved, bowl-like structure with a handle for holding and transferring loose materials.\n2. Evaluating the candidate objects:\n- Lemon: Not suitable as it does not have a bowl-like structure or a handle for scooping.\n- Spatula: While it has a handle, it lacks the curved, bowl-like structure needed for scooping.\n- Bowl: It has a bowl-like structure but lacks a handle for easy transfer of materials.\n- Safety pin: Not suitable as it is not designed for holding or transferring loose materials.\n3. SELECTON: The best substitute object for a missing scoop would be a bowl. While it lacks a handle, it closely resembles the curved, bowl-like structure needed for scooping loose materials.",
+    "correct": 0
+  },
+  {
+    "text": "can this object be used as a hammer?",
+    "vision_scores": "BYPASSED",
+    "llm_selection": "corkscrew",
+    "llm_reasoning": "REASONING:\n1. The core physical requirements of a hammer include a heavy, solid head for driving nails or breaking objects, and a long, straight handle for leverage and control.\n2. The corkscrew is not a suitable substitute as it does not have a heavy, solid head or a long handle. The screw is also not a suitable substitute as it lacks the weight and size of a hammer head. The lemon and saucepan are not suitable substitutes as they do not have the necessary weight, solid head, or handle for driving nails or breaking objects.\n3. The best substitute object for a missing hammer would be the screw, as it has a solid head that can be used for driving nails or breaking objects, although it may not be as effective as a traditional hammer.\n\nSELECTION: screw",
+    "correct": 0
+  },
+  {
+    "text": "can this object be used as a spatula?",
+    "vision_scores": "BYPASSED",
+    "llm_selection": "spoon",
+    "llm_reasoning": "REASONING:\n1. The core physical requirements of a spatula include a flat, broad blade for flipping, spreading, or lifting food items.\n2. Evaluating the candidate objects:\n- Bottle: Does not have a flat, broad blade and is not suitable for flipping or spreading food.\n- Knife: Has a blade but is not flat or broad enough for effective flipping or spreading.\n- Spoon: While it has a broad surface, it lacks the flat blade necessary for flipping and spreading.\n- Lemon: Not a suitable substitute as it does not have a flat, broad blade for flipping or spreading food.\n3. Based on the evaluation, the best substitute object for a spatula would be a spoon.\n\nSELECTION: spoon",
+    "correct": 0
+  },
+  {
+    "text": "can this object be used as a toothpick?",
+    "vision_scores": "BYPASSED",
+    "llm_selection": "safety pin",
+    "llm_reasoning": "REASONING:\n1. The core physical requirements of a toothpick are that it is thin, pointed, and able to remove food particles from between teeth.\n2. Evaluating each candidate object:\n- Screw: Not thin or pointed, and not suitable for removing food particles.\n- Hammer: Not thin or pointed, and not suitable for removing food particles.\n- Safety pin: Thin and pointed, but may not be long enough or sturdy enough for effective use as a toothpick.\n- Scissors: Not thin or pointed, and not suitable for removing food particles.\n3. Based on the evaluation, the best substitute object for a toothpick would be a safety pin, as it is thin and pointed, making it the closest match to the core physical requirements of a toothpick.\n\nSELECTION: safety pin",
+    "correct": 1
+  },
+  {
+    "text": "can this object be used as pliers?",
+    "vision_scores": "BYPASSED",
+    "llm_selection": "scissors",
+    "llm_reasoning": "REASONING:\n1. The core physical requirements of pliers include having two metal arms joined at a pivot point, with gripping jaws at one end for holding objects and a lever mechanism for applying force to grip or cut objects.\n2. Evaluating the candidate objects:\n- Screw: Does not have the necessary features of two arms, gripping jaws, or a lever mechanism.\n- Spoon: Does not have the necessary features of two arms, gripping jaws, or a lever mechanism.\n- Safety pin: Does not have the necessary features of two arms, gripping jaws, or a lever mechanism.\n- Scissors: While scissors do have two metal arms joined at a pivot point, they do not have gripping jaws or a lever mechanism for applying force like pliers do.\n3. Based on the evaluation, the best substitute object for pliers would be scissors, as they share the closest resemblance in terms of having two metal arms joined at a pivot point. However, it is important to note that scissors do not fully meet all the core physical requirements of pliers. \n\nSELECTION: Scissors",
+    "correct": 1
+  },
+  {
+    "text": "can this object be used as a scoop?",
+    "vision_scores": "BYPASSED",
+    "llm_selection": "bowl",
+    "llm_reasoning": "REASONING:\n1. The core physical requirements of a scoop include a curved, bowl-like structure with a handle for holding and transferring loose materials.\n2. The frying pan does not have a curved, bowl-like structure and is not designed for holding and transferring loose materials. The spatula does not have a bowl-like structure and is used for flipping and stirring, not for holding materials. The bowl has a curved, bowl-like structure but lacks a handle for easy transfer. The safety pin is not a suitable substitute as it is a small, sharp object not designed for holding and transferring materials.\n3. Based on the evaluation, the best substitute object for a missing scoop would be a bowl as it has a curved, bowl-like structure similar to a scoop and can be used for holding and transferring loose materials.\n\nSELECTION: bowl",
+    "correct": 1
+  },
+  {
+    "text": "can this object be used as a hammer?",
+    "vision_scores": "BYPASSED",
+    "llm_selection": "saucepan",
+    "llm_reasoning": "REASONING:\n1. The core physical requirements of a hammer include a heavy, solid head for driving nails or breaking objects, and a long, straight handle for leverage and control.\n2. Evaluating the candidate objects:\n- Bottle: Does not have a heavy, solid head or a long, straight handle.\n- Spatula: Does not have a heavy, solid head or a long, straight handle.\n- Saucepan: Does not have a long, straight handle and may not have a heavy, solid head.\n- Safety pin: Does not have a heavy, solid head or a long, straight handle.\n3. Based on the evaluation, the best substitute object would be the saucepan as it may have a heavy, solid head that could potentially be used for driving nails or breaking objects, although it lacks the long, straight handle for proper leverage and control.\n\nSELECTION: saucepan",
+    "correct": 1
+  },
+  {
+    "text": "can this object be used as a spatula?",
+    "vision_scores": "BYPASSED",
+    "llm_selection": "knife",
+    "llm_reasoning": "REASONING:\n1. The core physical requirements of a spatula include a flat, broad blade for flipping, spreading, or lifting food items, and a handle for easy grip and control.\n2. The corkscrew does not have a flat, broad blade or a suitable shape for flipping or spreading food. The knife has a blade but lacks the broadness and flexibility needed for flipping or spreading. The frying pan and saucepan both have flat surfaces but lack the handle necessary for easy grip and control.\n3. The best substitute object would be the knife, as it has a blade that can be used for lifting food items, even though it may not be as ideal as a spatula.\n\nSELECTION: knife",
+    "correct": 1
+  },
+  {
+    "text": "can this object be used as a toothpick?",
+    "vision_scores": "BYPASSED",
+    "llm_selection": "bottle",
+    "llm_reasoning": "REASONING:\n1. The core physical requirements of a toothpick are that it is thin, pointed, and sturdy enough to remove food particles from between teeth without breaking.\n2. Evaluating each candidate object:\n- Bottle: Not thin or pointed, and not suitable for removing food particles from between teeth.\n- Knife: Thin and pointed, but not typically used for this purpose and may be too sharp for delicate use in the mouth.\n- Spoon: Not thin or pointed, and not suitable for removing food particles from between teeth.\n- Safety pin: Thin, pointed, and sturdy enough to potentially serve as a substitute for a toothpick.\n3. SELECTION: safety pin",
+    "correct": 0
+  },
+  {
+    "text": "can this object be used as pliers?",
+    "vision_scores": "BYPASSED",
+    "llm_selection": "bottle",
+    "llm_reasoning": "REASONING:\n1. The core physical requirements of pliers include two metal arms joined at a pivot point, with gripping jaws at one end and a lever mechanism for applying force. Pliers are typically used for gripping, bending, cutting, or twisting objects.\n2. Evaluating the candidate objects:\n- Bottle: Does not have the necessary components to function as pliers.\n- Screw: Does not have the necessary components to function as pliers.\n- Saucepan: Does not have the necessary components to function as pliers.\n- Scissors: Has two metal arms joined at a pivot point, but lacks the gripping jaws and lever mechanism required for pliers.\n3. SELECTON: None of the candidate objects are suitable substitutes for pliers.",
+    "correct": 0
+  },
+  {
+    "text": "can this object be used as a scoop?",
+    "vision_scores": "BYPASSED",
+    "llm_selection": "knife",
+    "llm_reasoning": "REASONING:\n1. The core physical requirements of a scoop include a curved, bowl-like structure with a handle for holding and transferring loose materials.\n2. Evaluating the candidate objects:\n- Knife: Does not have a curved, bowl-like structure or a handle suitable for scooping.\n- Hammer: Does not have a curved, bowl-like structure or a handle suitable for scooping.\n- Street sign: Does not have a curved, bowl-like structure or a handle suitable for scooping.\n- Bowl: Has a curved, bowl-like structure but lacks a handle for easy transfer of materials.\n3. SELECTON: Bowl would be the best substitute object as it closely resembles the curved, bowl-like structure of a scoop, even though it lacks a handle.",
+    "correct": 0
+  },
+  {
+    "text": "can this object be used as a hammer?",
+    "vision_scores": "BYPASSED",
+    "llm_selection": "spoon",
+    "llm_reasoning": "REASONING:\n1. The core physical requirements of a hammer include a heavy, solid head for driving nails or breaking objects, and a long, straight handle for leverage and control.\n2. Evaluating the candidate objects:\n- Spoon: Does not have a heavy, solid head or a long, straight handle. Not suitable.\n- Street sign: Does not have a heavy, solid head or a handle. Not suitable.\n- Saucepan: Does not have a solid head or a handle suitable for hammering. Not suitable.\n- Toothpick: Does not have a heavy, solid head or a handle. Not suitable.\n3. SELECTON: None of the candidate objects are suitable substitutes for a hammer.",
+    "correct": 0
+  },
+  {
+    "text": "can this object be used as a spatula?",
+    "vision_scores": "BYPASSED",
+    "llm_selection": "knife",
+    "llm_reasoning": "REASONING:\n1. The core physical requirements of a spatula include a flat, broad blade for flipping, spreading, or lifting food items.\n2. Evaluating the candidate objects:\n- Knife: While a knife has a flat blade, it is typically sharp and not ideal for flipping or spreading food.\n- Screw: A screw is not flat or broad, and it is not designed for food handling.\n- Toothpick: A toothpick is thin and pointed, not suitable for flipping or spreading food.\n- Pliers: Pliers have a handle but lack a flat, broad blade for food handling.\n3. Based on the evaluation, the best substitute object for a spatula would be a knife, as it has a flat blade that can be used for flipping and spreading food items.\n\nSELECTION: knife",
+    "correct": 1
+  },
+  {
+    "text": "can this object be used as a toothpick?",
+    "vision_scores": "BYPASSED",
+    "llm_selection": "knife",
+    "llm_reasoning": "REASONING:\n1. The core physical requirements of a toothpick are that it is thin, pointed, and sturdy enough to remove food particles from between teeth without breaking.\n2. Evaluating each candidate object:\n- Knife: While a knife is thin and pointed, it is not typically used for removing food particles from between teeth and may be too sharp for this purpose.\n- Spoon: A spoon is not thin or pointed, making it unsuitable for removing food particles from between teeth.\n- Hammer: A hammer is not thin or pointed, and it is not designed for use in oral hygiene.\n- Safety pin: A safety pin is thin and pointed, similar to a toothpick, and could potentially be used to remove food particles from between teeth.\n3. SELECTED: Safety pin is the best substitute object as it meets the core physical requirements of a toothpick and could be used effectively for the same purpose.",
+    "correct": 0
+  },
+  {
+    "text": "can this object be used as pliers?",
+    "vision_scores": "BYPASSED",
+    "llm_selection": "corkscrew",
+    "llm_reasoning": "REASONING:\n1. The core physical requirements of pliers include two metal arms joined at a pivot point, with gripping jaws at one end and a lever mechanism for applying force. Pliers are typically used for gripping, bending, cutting, or twisting objects.\n2. Evaluating the candidate objects:\n- Corkscrew: While a corkscrew also has two arms joined at a pivot point, it lacks the gripping jaws and lever mechanism needed for the functions of pliers.\n- Street sign: A street sign does not have the necessary features of pliers and is not designed for gripping or manipulating objects.\n- Saucepan: A saucepan is a cooking utensil and does not have the structure or functionality of pliers.\n- Scissors: Scissors have two blades joined at a pivot point, similar to pliers, but they lack the gripping jaws and lever mechanism required for tasks typically performed with pliers.\n3. SELECTED: Scissors would be the best substitute object for pliers, as they share some similarities in structure with two arms joined at a pivot point. While scissors do not have the exact functionality of pliers, they can be used for cutting and gripping tasks in a pinch.",
+    "correct": 0
+  },
+  {
+    "text": "can this object be used as a scoop?",
+    "vision_scores": "BYPASSED",
+    "llm_selection": "corkscrew",
+    "llm_reasoning": "REASONING:\n1. The core physical requirements of a scoop include a curved, bowl-like structure with a handle for holding and transferring loose materials.\n2. Evaluating each candidate object:\n- Corkscrew: Does not have a bowl-like structure or handle, used for opening bottles.\n- Street sign: Does not have a bowl-like structure or handle, used for providing information on roads.\n- Bowl: Has a curved, bowl-like structure but lacks a handle for easy transfer of materials.\n- Toothpick: Does not have a bowl-like structure or handle, used for cleaning teeth.\n3. Selection: The best substitute object for a missing scoop would be a bowl, as it closely resembles the curved, bowl-like structure needed for holding and transferring loose materials. While it lacks a handle, it is the closest match among the available options.",
+    "correct": 0
+  },
+  {
+    "text": "can this object be used as a hammer?",
+    "vision_scores": "BYPASSED",
+    "llm_selection": "spoon",
+    "llm_reasoning": "REASONING:\n1. The core physical requirements of a hammer include a heavy, solid head for driving nails or breaking objects, and a long, straight handle for leverage and control.\n2. Evaluating the candidate objects:\n- Spoon: Does not have a heavy, solid head or a long, straight handle. Not suitable.\n- Street sign: Does not have a heavy, solid head or a handle. Not suitable.\n- Saucepan: Does not have a solid head or a handle. Not suitable.\n- Scissors: Does not have a heavy, solid head or a handle. Not suitable.\n3. SELECTED: None of the candidate objects are suitable substitutes for a hammer.",
+    "correct": 0
+  },
+  {
+    "text": "can this object be used as a spatula?",
+    "vision_scores": "BYPASSED",
+    "llm_selection": "spoon",
+    "llm_reasoning": "REASONING:\n1. The core physical requirements of a spatula include a flat, broad blade for flipping, spreading, or lifting food items.\n2. Evaluating each candidate object:\n- Knife: While a knife has a flat blade, it is typically sharp and not ideal for flipping or spreading food.\n- Screw: A screw is not flat or broad, and it does not have a handle for easy manipulation.\n- Spoon: A spoon has a broad, flat surface that can be used for flipping or spreading food, but it lacks the thinness and flexibility of a spatula.\n- Lemon: A lemon is not a suitable substitute for a spatula as it does not have the necessary flat blade or handle.\n3. Based on the evaluation, the best substitute object for a spatula would be a spoon.\n\nSELECTION: spoon",
+    "correct": 0
+  },
+  {
+    "text": "can this object be used as a toothpick?",
+    "vision_scores": "BYPASSED",
+    "llm_selection": "spoon",
+    "llm_reasoning": "REASONING:\n1. The core physical requirements of a toothpick are that it is thin, pointed, and able to fit between teeth to remove food particles.\n2. Evaluating the candidate objects:\n- Spoon: Not thin or pointed, and too large to fit between teeth.\n- Hammer: Not thin or pointed, and definitely not suitable for removing food particles from between teeth.\n- Frying pan: Not thin or pointed, and not designed for dental hygiene purposes.\n- Safety pin: Thin and pointed, similar to a toothpick, and can potentially fit between teeth to remove food particles.\n3. SELECTON: Safety pin",
+    "correct": 0
+  },
+  {
+    "text": "can this object be used as pliers?",
+    "vision_scores": "BYPASSED",
+    "llm_selection": "bottle",
+    "llm_reasoning": "REASONING:\n1. The core physical requirements of pliers include two metal arms joined at a pivot point, with gripping jaws at one end and a lever mechanism for applying force.\n2. Evaluating the candidate objects:\n- Bottle: Does not have the necessary components of pliers.\n- Corkscrew: Does not have the necessary components of pliers.\n- Frying pan: Does not have the necessary components of pliers.\n- Scissors: Has two metal arms joined at a pivot point, but lacks the gripping jaws and lever mechanism for applying force.\n3. SELECTON: Scissors",
+    "correct": 0
+  },
+  {
+    "text": "can this object be used as a scoop?",
+    "vision_scores": "BYPASSED",
+    "llm_selection": "bowl",
+    "llm_reasoning": "REASONING:\n1. The core physical requirements of a scoop include a curved, bowl-like structure with a handle for holding and transferring loose materials.\n2. Evaluating each candidate object:\n- Knife: Does not have a curved, bowl-like structure or a handle suitable for scooping.\n- Screw: Not designed for holding or transferring loose materials.\n- Bowl: Has a curved, bowl-like structure but lacks a handle for easy transfer.\n- Toothpick: Does not have a curved, bowl-like structure or a handle for scooping.\n3. Based on the evaluation, the best substitute object for a missing scoop would be a bowl as it has a similar curved, bowl-like structure that can hold loose materials, even though it lacks a handle for easy transfer.\n\nSELECTION: bowl",
+    "correct": 1
+  },
+  {
+    "text": "can this object be used as a hammer?",
+    "vision_scores": "BYPASSED",
+    "llm_selection": "frying pan",
+    "llm_reasoning": "REASONING:\n1. The core physical requirements of a hammer include a heavy, solid head for driving nails or breaking objects, and a long, straight handle for leverage and control.\n2. Evaluating the candidate objects:\n- Frying pan: While a frying pan has a solid and heavy bottom, it lacks a long, straight handle necessary for hammering.\n- Lemon: A lemon is not solid or heavy enough to drive nails or break objects, and it does not have a handle.\n- Street sign: A street sign may have a solid and heavy enough material for hammering, but it lacks a handle for control.\n- Saucepan: A saucepan has a solid and heavy bottom, but it also lacks a long, straight handle for leverage and control.\n3. SELECTON: None of the candidate objects are suitable substitutes for a hammer.",
+    "correct": 0
+  },
+  {
+    "text": "can this object be used as a spatula?",
+    "vision_scores": "BYPASSED",
+    "llm_selection": "knife",
+    "llm_reasoning": "REASONING:\n1. The core physical requirements of a spatula include a flat, broad blade for flipping or spreading food items, and a handle for easy grip and control.\n2. Evaluating each candidate object:\n- Knife: While a knife has a flat blade, it is typically sharp and not ideal for flipping or spreading food items. It also lacks the specific shape and design of a spatula.\n- Saucepan: A saucepan is not a suitable substitute as it is a cooking vessel and does not have a flat blade or handle for flipping or spreading food.\n- Safety pin: A safety pin is small and not designed for flipping or spreading food items. It lacks the necessary size and shape of a spatula.\n- Scissors: Scissors have two blades and are not suitable for flipping or spreading food items. They also lack the flat, broad blade design of a spatula.\n3. SELECTED: None of the candidate objects are suitable substitutes for a spatula.",
+    "correct": 1
+  },
+  {
+    "text": "can this object be used as a toothpick?",
+    "vision_scores": "BYPASSED",
+    "llm_selection": "safety pin",
+    "llm_reasoning": "REASONING:\n1. The core physical requirements of a toothpick are that it is thin, pointed, and able to fit between teeth to remove food particles.\n2. The hammer, frying pan, and scissors are all too large and bulky to serve as a substitute for a toothpick. The safety pin, however, is thin and pointed, similar to a toothpick, and could potentially be used to remove food particles from between teeth.\n3. Therefore, the best substitute object for a missing toothpick would be the safety pin.\n\nSELECTION: safety pin",
+    "correct": 1
+  },
+  {
+    "text": "can this object be used as pliers?",
+    "vision_scores": "BYPASSED",
+    "llm_selection": "corkscrew",
+    "llm_reasoning": "REASONING:\n1. The core physical requirements of pliers include having two metal arms joined at a pivot point, with gripping jaws at one end for holding objects and a lever mechanism for applying force to grip or cut objects.\n2. Evaluating the candidate objects:\n- Corkscrew: While a corkscrew also has two arms joined at a pivot point, it lacks the gripping jaws and lever mechanism required for a pliers.\n- Knife: A knife does not have the same design as pliers, as it lacks the two arms joined at a pivot point and the lever mechanism for applying force.\n- Bowl: A bowl is not a suitable substitute for pliers as it does not have any of the required features such as arms, jaws, or a lever mechanism.\n- Scissors: Scissors have two arms joined at a pivot point, similar to pliers. However, scissors have cutting blades instead of gripping jaws and are used for cutting rather than gripping objects.\n3. SELECTED: Scissors would be the best substitute object for pliers, as they share the basic design of having two arms joined at a pivot point. While scissors are primarily used for cutting, they can also be used to grip objects in a pinch.",
+    "correct": 0
+  },
+  {
+    "text": "can this object be used as a scoop?",
+    "vision_scores": "BYPASSED",
+    "llm_selection": "bowl",
+    "llm_reasoning": "REASONING:\n1. The core physical requirements of a scoop include a curved, bowl-like structure with a handle for holding and transferring loose materials.\n2. Evaluating each candidate object:\n- Frying pan: While a frying pan has a curved structure, it lacks the bowl-like shape and is not designed for holding and transferring loose materials.\n- Bowl: A bowl has a curved, bowl-like structure but lacks a handle for easy transfer of materials.\n- Scissors: Scissors do not have a curved, bowl-like structure or a handle for holding and transferring materials.\n- Pliers: Pliers have a handle for gripping but do not have a curved, bowl-like structure for holding materials.\n3. Based on the evaluation, the best substitute object for a missing scoop would be a bowl as it closely matches the curved, bowl-like structure of a scoop.\n\nSELECTION: bowl",
+    "correct": 1
+  },
+  {
+    "text": "can this object be used as a hammer?",
+    "vision_scores": "BYPASSED",
+    "llm_selection": "bottle",
+    "llm_reasoning": "REASONING:\n1. The core physical requirements of a hammer include a heavy, solid head for driving nails or breaking objects, and a long, straight handle for leverage and control.\n2. Evaluating the candidate objects:\n- Bottle: Does not have a heavy, solid head or a long, straight handle. Not suitable.\n- Knife: Does not have a heavy, solid head or a long, straight handle. Not suitable.\n- Bowl: Does not have a heavy, solid head or a long, straight handle. Not suitable.\n- Saucepan: Does not have a long, straight handle, but it does have a heavy, solid base that could potentially be used for driving nails or breaking objects.\n3. SELECTED: Saucepan. While not a perfect substitute, the saucepan's heavy, solid base can be used in a similar manner to a hammer for driving nails or breaking objects.",
+    "correct": 0
+  },
+  {
+    "text": "can this object be used as a spatula?",
+    "vision_scores": "BYPASSED",
+    "llm_selection": "knife",
+    "llm_reasoning": "REASONING:\n1. The core physical requirements of a spatula include a flat, broad blade for flipping, spreading, or lifting food items.\n2. Evaluating each candidate object:\n- Knife: While a knife has a flat blade, it is typically not as broad as a spatula and may not be as effective for flipping or spreading food items.\n- Spoon: A spoon has a curved shape and is not flat like a spatula, making it less suitable for flipping or spreading food items.\n- Frying pan: A frying pan has a flat surface, but it lacks a handle and is not designed for flipping or spreading food items.\n- Pliers: Pliers have a handle and a flat surface, but they are not designed for kitchen tasks like flipping or spreading food items.\n3. Selection: The best substitute object for a missing spatula would be a knife, as it has a flat blade that can be used for flipping and spreading food items, even though it may not be as ideal as a spatula.",
+    "correct": 1
+  },
+  {
+    "text": "can this object be used as a toothpick?",
+    "vision_scores": "BYPASSED",
+    "llm_selection": "bottle",
+    "llm_reasoning": "REASONING:\n1. The core physical requirements of a toothpick are that it is thin, pointed, and sturdy enough to remove food particles from between teeth without breaking.\n2. Evaluating the candidate objects:\n- Bottle: Not thin or pointed, and not suitable for removing food particles.\n- Corkscrew: Not thin or pointed, and designed for opening bottles with corks.\n- Hammer: Not thin or pointed, and too large and heavy for delicate tasks like removing food particles.\n- Safety pin: Thin, pointed, and sturdy enough to potentially serve as a substitute for a toothpick.\n3. SELECTION: Safety pin",
+    "correct": 0
+  },
+  {
+    "text": "can this object be used as pliers?",
+    "vision_scores": "BYPASSED",
+    "llm_selection": "corkscrew",
+    "llm_reasoning": "REASONING:\n1. The core physical requirements of pliers include two metal arms joined at a pivot point, with gripping jaws at one end for holding objects and a lever mechanism for applying force to grip or cut objects.\n2. Evaluating the candidate objects:\n- Corkscrew: While it has a metal spiral arm for twisting into corks, it lacks the gripping jaws and lever mechanism required for a pliers.\n- Spoon: A spoon is not designed for gripping or applying force, so it does not meet the requirements of a pliers.\n- Toothpick: A toothpick is a small, thin object used for cleaning teeth and does not have the necessary features of a pliers.\n- Scissors: Scissors have two metal arms joined at a pivot point, with cutting blades at one end and a lever mechanism for applying force. While scissors do not have gripping jaws like pliers, they share some similar features and can be used to grip and cut objects.\n3. SELECTED: Scissors would be the best substitute object for pliers out of the available options. While not a perfect match, scissors share some key physical features and functions with pliers, making them the closest substitute.",
+    "correct": 0
+  },
+  {
+    "text": "can this object be used as a scoop?",
+    "vision_scores": "BYPASSED",
+    "llm_selection": "corkscrew",
+    "llm_reasoning": "REASONING:\n1. The core physical requirements of a scoop include a curved, bowl-like structure with a handle for holding and transferring loose materials.\n2. The corkscrew does not have a bowl-like structure or handle, so it is not suitable as a substitute for a scoop. The lemon is also not a suitable substitute as it does not have the necessary structure or handle. The street sign is not a suitable substitute as it is not designed for holding or transferring loose materials. The bowl, however, has a curved, bowl-like structure and can be easily held and used to transfer loose materials.\n3. SELECTION: bowl",
+    "correct": 0
+  },
+  {
+    "text": "can this object be used as a hammer?",
+    "vision_scores": "BYPASSED",
+    "llm_selection": "bottle",
+    "llm_reasoning": "REASONING:\n1. The core physical requirements of a hammer include a heavy, solid head for driving nails or breaking objects, and a long, straight handle for leverage and control.\n2. Evaluating the candidate objects:\n- Bottle: Does not have a heavy, solid head or a long, straight handle. Not suitable.\n- Saucepan: Does not have a solid head or a handle designed for striking. Not suitable.\n- Safety pin: Does not have a heavy, solid head or a handle for striking. Not suitable.\n- Scissors: While scissors do not have a heavy, solid head, they do have two sharp blades that could potentially be used for cutting or prying. The handles could also provide some leverage. However, they are not an ideal substitute for a hammer.\n3. SELECTED: Scissors",
+    "correct": 0
+  },
+  {
+    "text": "can this object be used as a spatula?",
+    "vision_scores": "BYPASSED",
+    "llm_selection": "knife",
+    "llm_reasoning": "REASONING:\n1. The core physical requirements of a spatula include a flat, broad blade for flipping, spreading, or lifting food items, and a handle for easy grip and control.\n2. The corkscrew does not have a flat, broad blade and is not designed for flipping or spreading food. The knife has a blade but lacks the broadness and flexibility needed for flipping or spreading food. The street sign is not a kitchen tool and does not have the necessary features for food preparation. The scissors have two blades and lack the flat, broad blade required for flipping or spreading food, although they do have a handle for grip.\n3. Based on the available options, the best substitute object for a spatula would be the knife, as it has a blade that can be used for lifting food items and a handle for grip, even though it may not be as ideal as a spatula.\n\nSELECTION: knife",
+    "correct": 1
+  },
+  {
+    "text": "can this object be used as a toothpick?",
+    "vision_scores": "BYPASSED",
+    "llm_selection": "bottle",
+    "llm_reasoning": "REASONING:\n1. The core physical requirements of a toothpick are that it is thin, pointed, and sturdy enough to remove food particles from between teeth without breaking.\n2. Evaluating each candidate object:\n- Bottle: Not thin or pointed, and not suitable for removing food particles from between teeth.\n- Frying pan: Not thin or pointed, and definitely not suitable for removing food particles from between teeth.\n- Safety pin: Thin and pointed, but may not be sturdy enough for removing food particles between teeth and could potentially cause injury.\n- Scissors: Not thin or pointed, and not suitable for removing food particles from between teeth.\n3. Selection: The best substitute object for a missing toothpick would be a safety pin. While it may not be as ideal as a toothpick, it is thin and pointed enough to potentially serve the same purpose in a pinch.",
+    "correct": 0
+  },
+  {
+    "text": "can this object be used as pliers?",
+    "vision_scores": "BYPASSED",
+    "llm_selection": "screw",
+    "llm_reasoning": "REASONING:\n1. The core physical requirements of pliers include two metal arms joined at a pivot point, with gripping jaws at one end for holding objects and a lever mechanism for applying force to grip or cut objects.\n2. Evaluating the candidate objects:\n- Screw: Does not have the necessary components to function as pliers.\n- Hammer: Does not have the necessary components to function as pliers.\n- Frying pan: Does not have the necessary components to function as pliers.\n- Scissors: Has two metal arms joined at a pivot point, with gripping jaws at one end for cutting objects. While scissors do not have a lever mechanism like pliers, they can still be used to grip and cut objects.\n3. SELECT: Scissors",
+    "correct": 0
+  },
+  {
+    "text": "can this object be used as a scoop?",
+    "vision_scores": "BYPASSED",
+    "llm_selection": "bowl",
+    "llm_reasoning": "REASONING:\n1. The core physical requirements of a scoop include a curved, bowl-like structure with a handle for holding and transferring loose materials.\n2. Evaluating the candidate objects:\n- Screw: Does not have a bowl-like structure or handle, not suitable for holding and transferring materials.\n- Street sign: Does not have a bowl-like structure or handle, not suitable for holding and transferring materials.\n- Bowl: Has a bowl-like structure but lacks a handle for easy transfer of materials.\n- Scissors: Does not have a bowl-like structure or handle, not suitable for holding and transferring materials.\n3. Based on the evaluation, the best substitute object for a missing scoop would be a bowl as it closely resembles the bowl-like structure needed for holding and transferring materials.\n\nSELECTION: bowl",
+    "correct": 1
+  },
+  {
+    "text": "can this object be used as a hammer?",
+    "vision_scores": "BYPASSED",
+    "llm_selection": "spoon",
+    "llm_reasoning": "REASONING:\n1. The core physical requirements of a hammer include a heavy, solid head for driving nails or breaking objects, and a long, straight handle for leverage and control.\n2. Evaluating the candidate objects:\n- Spoon: Does not have a heavy, solid head or a long, straight handle. Not suitable.\n- Lemon: Does not have a heavy, solid head or a long, straight handle. Not suitable.\n- Spatula: Does not have a heavy, solid head or a long, straight handle. Not suitable.\n- Saucepan: Does not have a heavy, solid head or a long, straight handle. Not suitable.\n3. SELECTED: None of the candidate objects are suitable substitutes for a hammer.",
+    "correct": 0
+  },
+  {
+    "text": "can this object be used as a spatula?",
+    "vision_scores": "BYPASSED",
+    "llm_selection": "knife",
+    "llm_reasoning": "REASONING:\n1. The core physical requirements of a spatula include a flat, broad blade for flipping or spreading food items, and a handle for easy grip and control.\n2. Evaluating the candidate objects:\n- Knife: While a knife has a flat blade, it is not as broad as a spatula and may not be as effective for flipping or spreading food items. It also lacks the specific handle design of a spatula.\n- Frying pan: A frying pan does not have a flat, broad blade like a spatula, and it is not designed for flipping or spreading food items. It also does not have a handle specifically for lifting.\n- Street sign: A street sign is not designed for kitchen use and does not have the flat, broad blade or handle required for a spatula.\n- Safety pin: A safety pin is not suitable for flipping or spreading food items due to its small size and lack of a flat blade or handle.\n3. SELECTON: The best substitute object for a missing spatula would be a knife, as it has a flat blade that can be used for flipping or spreading food items, even though it may not be as effective as a spatula.",
+    "correct": 1
+  },
+  {
+    "text": "can this object be used as a toothpick?",
+    "vision_scores": "BYPASSED",
+    "llm_selection": "hammer",
+    "llm_reasoning": "REASONING:\n1. The core physical requirements of a toothpick are that it is thin, pointed, and sturdy enough to remove food particles from between teeth without breaking.\n2. Evaluating each candidate object:\n- Hammer: A hammer is not thin or pointed, and it is not suitable for removing food particles from between teeth.\n- Frying pan: A frying pan is not thin or pointed, and it is not suitable for removing food particles from between teeth.\n- Lemon: A lemon is not thin or pointed, and it is not suitable for removing food particles from between teeth.\n- Safety pin: A safety pin is thin, pointed, and sturdy enough to potentially be used for removing food particles from between teeth.\n3. SELECTED: Safety pin",
+    "correct": 0
+  },
+  {
+    "text": "can this object be used as pliers?",
+    "vision_scores": "BYPASSED",
+    "llm_selection": "screw",
+    "llm_reasoning": "REASONING:\n1. The core physical requirements of pliers include having two metal arms joined at a pivot point, with gripping jaws at one end for holding objects and a lever mechanism for applying force to grip or cut objects.\n2. Evaluating the candidate objects:\n- Screw: Does not have the necessary arms, jaws, or lever mechanism.\n- Frying pan: Does not have the necessary arms, jaws, or lever mechanism.\n- Saucepan: Does not have the necessary arms, jaws, or lever mechanism.\n- Scissors: Has two metal arms joined at a pivot point, with gripping jaws at one end for cutting objects. While scissors do not have a lever mechanism like pliers, they can still be used to grip and manipulate objects in a similar manner.\n3. SELECT: Scissors",
+    "correct": 0
+  }
+]

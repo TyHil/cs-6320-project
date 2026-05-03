@@ -315,7 +315,7 @@ def main(model_name, args, tool_descriptions):
     # Save reasoning log for qualitative analysis
     if args.save_reasoning and is_cot_mode:
         model_safe_name = model_name.split("/")[-1]
-        log_file = f"reasoning_log_{mode}_{model_safe_name}.json"
+        log_file = f"reasoning/reasoning_log_{mode}_{model_safe_name}.json"
         with open(log_file, "w") as f:
             json.dump(reasoning_log, f, indent=2)
         print(f"Reasoning log saved to {log_file}")
@@ -368,7 +368,7 @@ if __name__ == "__main__":
     if args.bypass_vision and "chain" not in args.task_type:
         parser.error("--bypass-vision can only be used with task types ending in '-chain' (CoT modes).")
 
-    filename = f'Viz_{args.task_type}{"_only_cot" if args.bypass_vision else ""}{"_dynamic_descriptions" if args.dynamic_descriptions else ""}.png'
+    filename = f'results/Viz_{args.task_type}{"_only_cot" if args.bypass_vision else ""}{"_dynamic_descriptions" if args.dynamic_descriptions else ""}.png'
     if os.path.exists(filename) and not args.override:
         print(f"Skipping execution: '{filename}' already exists.")
         sys.exit(0)
